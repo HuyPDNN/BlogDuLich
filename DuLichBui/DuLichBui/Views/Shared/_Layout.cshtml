@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <title>Andrea - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
                 </ul>
             </nav>
             <div class="colorlib-footer">
-                <h1 id="colorlib-logo" class="mb-4"><a href="index.html" style="background-image: url(/Assets/client/images/bg_1.jpg);">Du Lich <span id="bui">BUI</span></a></h1>
+                <h1 id="colorlib-logo" class="mb-4"><a href="index.html" style="background-image: url(/Assets/client/images/bg_1.jpg);">Du Lich <span id="bui">BUj</span></a></h1>
                 <div class="mb-4">
                     <h3>Đăng kí nhận bảng tin</h3>
                     <form action="#" class="colorlib-subscribe-form">
@@ -56,8 +56,11 @@
             </div>
         </aside> <!-- END COLORLIB-ASIDE -->
         @RenderBody()   
-    <!-- END COLORLIB-MAIN -->
-    </div><!-- END COLORLIB-PAGE -->
+        <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+            @RenderSection("ListInfoRight", required: false)<!-- END COL -->
+        </div>
+            <!-- END COLORLIB-MAIN -->
+      </div><!-- END COLORLIB-PAGE -->
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
