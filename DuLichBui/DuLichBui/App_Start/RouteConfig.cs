@@ -13,11 +13,43 @@ namespace DuLichBui
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            name: "About",
+            url: "gioi-thieu",
+            defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "DuLichBui.Controllers" }
+        );
+            routes.MapRoute(
+            name: "Contact",
+            url: "lien-he",
+            defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+            namespaces: new[] { "DuLichBui.Controllers" }
+        );
+            
+            routes.MapRoute(
+        name: "Food",
+        url: "am-thuc",
+        defaults: new { controller = "Food", action = "Index", id = UrlParameter.Optional },
+        namespaces: new[] { "DuLichBui.Controllers" }
+    );
+            routes.MapRoute(
+         name: "Travel",
+         url: "du-lich",
+         defaults: new { controller = "Travel", action = "Index", id = UrlParameter.Optional },
+         namespaces: new[] { "DuLichBui.Controllers" }
+     );
+                  routes.MapRoute(
+         name: "Home",
+         url: "trang-chu",
+         defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+         namespaces: new[] { "DuLichBui.Controllers" }
+     );
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+           );
         }
     }
 }
