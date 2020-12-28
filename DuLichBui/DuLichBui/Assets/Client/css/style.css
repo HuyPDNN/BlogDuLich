@@ -5401,12 +5401,48 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
-  background-color: #f8f9fa !important; }
+  background-color: #f8f9fa !important;
+  float:right;
+  width:400px;
+  background:black;
+  z-index:1;
+  margin-top: -230em;
+}
+.set-account {
+    margin: 0 0 50px 20px;
+}
+    .set-account select.language {
+        border-radius: 50%;
+    }
+    .set-account input {
+        float: right;
+        width: 120px;
+        height: 40px;
+        margin-right: 5px;
+        border: 0px ;
+        border-radius: 10px 40px;
+        text-align: center;
+    }
+    .set-account .register {
+        font-size:20px;
+        background: #4D79FF;
+        color:aliceblue;
+    }
+        .set-account .register:hover {
+            background: #fff;
+            color: #4D79FF;
+        }
+    .set-account .account:hover {
+        background: #fff;
+        color: #4D79FF;
+    }
+
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
-  background-color: #dae0e5 !important; }
+    background-color: #dae0e5 !important;
+}
 
 .bg-dark {
   background-color: #343a40 !important; }
@@ -9127,7 +9163,7 @@ textarea.form-control {
     z-index: -1; }
   .subs-wrap h3 {
     color: #fff; }
-
+ 
 .subscribe-form .form-group {
   position: relative;
   margin-bottom: 0;
@@ -9310,3 +9346,6 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+bg-light #day {
+    margin-left: 1040px;
+}
