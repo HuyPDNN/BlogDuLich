@@ -5406,15 +5406,16 @@ button.bg-danger:focus {
   width:400px;
   background:black;
   z-index:1;
-  margin-top: -230em;
+  margin-top: -231em;
 }
+
 .set-account {
     margin: 0 0 50px 20px;
 }
     .set-account select.language {
         border-radius: 50%;
     }
-    .set-account input {
+    .set-account button {
         float: right;
         width: 120px;
         height: 40px;
@@ -5428,6 +5429,10 @@ button.bg-danger:focus {
         background: #4D79FF;
         color:aliceblue;
     }
+        .set-account .register .marquee {
+            padding-bottom: 15px;
+            font-size: 20px;
+        }
         .set-account .register:hover {
             background: #fff;
             color: #4D79FF;
