@@ -5,13 +5,14 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DuLichBuiDbContext : DbContext
+    public partial class DulichBuiDbContext : DbContext
     {
-        public DuLichBuiDbContext()
-            : base("name=DuLichBuiDbContext")
+        public DulichBuiDbContext()
+            : base("name=DulichBuiDbContext")
         {
         }
 
+        public virtual DbSet<BaiViet> BaiViet { get; set; }
         public virtual DbSet<BinhLuanBaiViet> BinhLuanBaiViet { get; set; }
         public virtual DbSet<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
         public virtual DbSet<LoaiThanhVien> LoaiThanhVien { get; set; }
@@ -20,16 +21,35 @@ namespace Model.EF
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
         public virtual DbSet<ThanhVien> ThanhVien { get; set; }
         public virtual DbSet<TheLoai> TheLoai { get; set; }
-        public virtual DbSet<TinTuc> TinTuc { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.MaBaiViet)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.MaTheLoai)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.MaThanhVien)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.Link)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.Image)
+                .IsUnicode(false);
+
             modelBuilder.Entity<BinhLuanBaiViet>()
                 .Property(e => e.MaBinhLuan)
                 .IsUnicode(false);
 
             modelBuilder.Entity<BinhLuanBaiViet>()
-                .Property(e => e.MaTinTuc)
+                .Property(e => e.MaBaiViet)
                 .IsUnicode(false);
 
             modelBuilder.Entity<BinhLuanBaiViet>()
@@ -41,7 +61,7 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<DanhGiaBaiViet>()
-                .Property(e => e.MaTinTuc)
+                .Property(e => e.MaBaiViet)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DanhGiaBaiViet>()
@@ -127,26 +147,6 @@ namespace Model.EF
 
             modelBuilder.Entity<TheLoai>()
                 .Property(e => e.MaTheLoai)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TinTuc>()
-                .Property(e => e.MaTinTuc)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TinTuc>()
-                .Property(e => e.MaTheLoai)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TinTuc>()
-                .Property(e => e.MaThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TinTuc>()
-                .Property(e => e.Link)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TinTuc>()
-                .Property(e => e.Image)
                 .IsUnicode(false);
         }
     }

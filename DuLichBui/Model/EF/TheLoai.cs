@@ -12,7 +12,7 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TheLoai()
         {
-            TinTuc = new HashSet<TinTuc>();
+            BaiViet = new HashSet<BaiViet>();
         }
 
         [Key]
@@ -24,6 +24,6 @@ namespace Model.EF
         public string MieuTa { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TinTuc> TinTuc { get; set; }
+        public virtual ICollection<BaiViet> BaiViet { get; set; }
     }
 }

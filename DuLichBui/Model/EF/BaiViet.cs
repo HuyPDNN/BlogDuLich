@@ -6,11 +6,11 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("TinTuc")]
-    public partial class TinTuc
+    [Table("BaiViet")]
+    public partial class BaiViet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TinTuc()
+        public BaiViet()
         {
             BinhLuanBaiViet = new HashSet<BinhLuanBaiViet>();
             DanhGiaBaiViet = new HashSet<DanhGiaBaiViet>();
@@ -18,7 +18,7 @@ namespace Model.EF
 
         [Key]
         [StringLength(50)]
-        public string MaTinTuc { get; set; }
+        public string MaBaiViet { get; set; }
 
         [StringLength(50)]
         public string MaTheLoai { get; set; }
@@ -47,14 +47,14 @@ namespace Model.EF
 
         public bool? TrangThai { get; set; }
 
+        public virtual ThanhVien ThanhVien { get; set; }
+
+        public virtual TheLoai TheLoai { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BinhLuanBaiViet> BinhLuanBaiViet { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
-
-        public virtual ThanhVien ThanhVien { get; set; }
-
-        public virtual TheLoai TheLoai { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace Model.EF
         public string MaBinhLuan { get; set; }
 
         [StringLength(50)]
-        public string MaTinTuc { get; set; }
+        public string MaBaiViet { get; set; }
 
         [StringLength(50)]
         public string MaThanhVien { get; set; }
@@ -24,8 +24,8 @@ namespace Model.EF
 
         public string NoiDungBinhLuan { get; set; }
 
-        public virtual ThanhVien ThanhVien { get; set; }
+        public virtual BaiViet BaiViet { get; set; }
 
-        public virtual TinTuc TinTuc { get; set; }
+        public virtual ThanhVien ThanhVien { get; set; }
     }
 }

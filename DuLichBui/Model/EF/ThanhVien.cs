@@ -12,9 +12,9 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ThanhVien()
         {
+            BaiViet = new HashSet<BaiViet>();
             BinhLuanBaiViet = new HashSet<BinhLuanBaiViet>();
             DanhGiaBaiViet = new HashSet<DanhGiaBaiViet>();
-            TinTuc = new HashSet<TinTuc>();
         }
 
         [Key]
@@ -71,14 +71,14 @@ namespace Model.EF
         public bool? TrangThai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaiViet> BaiViet { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BinhLuanBaiViet> BinhLuanBaiViet { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
 
         public virtual LoaiThanhVien LoaiThanhVien { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TinTuc> TinTuc { get; set; }
     }
 }
