@@ -1,0 +1,89 @@
+namespace Model.EF
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("ThanhVien")]
+    public partial class ThanhVien
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ThanhVien()
+        {
+            BinhLuanBaiViet = new HashSet<BinhLuanBaiViet>();
+            DanhGiaBaiViet = new HashSet<DanhGiaBaiViet>();
+            TinTuc = new HashSet<TinTuc>();
+        }
+
+        [Key]
+        [StringLength(50)]
+        public string MaThanhVien { get; set; }
+
+        [StringLength(50)]
+        public string MaLoaiThanhVien { get; set; }
+
+        [StringLength(50)]
+        public string MaQuyen { get; set; }
+
+        [StringLength(50)]
+        public string TaiKhoan { get; set; }
+
+        [StringLength(50)]
+        public string MatKhau { get; set; }
+
+        public string HoTen { get; set; }
+
+        public string Email { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? NgaySinh { get; set; }
+
+        [StringLength(50)]
+        public string GioiTinh { get; set; }
+
+        [StringLength(50)]
+        public string AnhDaiDien { get; set; }
+
+        public int? SDT { get; set; }
+
+        [StringLength(50)]
+        public string QuocGia { get; set; }
+
+        [StringLength(50)]
+        public string ThanhPho { get; set; }
+
+        public string DiaChi { get; set; }
+
+        public string FaceBookLink { get; set; }
+
+        public string MoTaBanThan { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? NgayDangKi { get; set; }
+
+        public decimal? TongBaiViet { get; set; }
+
+        public decimal? TongLuotDanhGia { get; set; }
+
+        public int? TongLuotXem { get; set; }
+
+        public decimal? TienHoaHong { get; set; }
+
+        public bool? TrangThai { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BinhLuanBaiViet> BinhLuanBaiViet { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
+
+        public virtual LoaiThanhVien LoaiThanhVien { get; set; }
+
+        public virtual Quyen Quyen { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TinTuc> TinTuc { get; set; }
+    }
+}
