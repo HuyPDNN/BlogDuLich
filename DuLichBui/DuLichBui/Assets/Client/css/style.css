@@ -5405,8 +5405,9 @@ button.bg-danger:focus {
   float:right;
   width:400px;
   background:black;
-  z-index:1;
-  margin-top: -231em;
+  position:absolute;
+  margin-left:1120px;
+  z-index: 999;
 }
 
 .set-account {
@@ -8184,7 +8185,12 @@ body {
   font-size: 15px;
   line-height: 1.8;
   font-weight: 400;
-  color: #666666; }
+  color: #666666;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
   body.offcanvas {
     overflow-x: hidden; }
     body.offcanvas #colorlib-aside {
