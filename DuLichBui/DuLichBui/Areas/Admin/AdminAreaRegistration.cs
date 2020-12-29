@@ -2,17 +2,17 @@
 
 namespace DuLichBui.Areas.Admin
 {
-    public class AdminAreaRegistration : AreaRegistration 
+    public class AdminAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Admin";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Admin_default",
@@ -39,6 +39,11 @@ namespace DuLichBui.Areas.Admin
            url: "bai-viet",
            defaults: new { controller = "BaiViet", action = "Index", id = UrlParameter.Optional }
             );
+            context.MapRoute(
+            name: "Login",
+            url: "dang-nhap",
+            defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+ );
         }
     }
 }
