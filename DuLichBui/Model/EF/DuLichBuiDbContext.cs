@@ -94,10 +94,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<ThanhVien>()
-                .Property(e => e.MaQuyen)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ThanhVien>()
                 .Property(e => e.TaiKhoan)
                 .IsUnicode(false);
 

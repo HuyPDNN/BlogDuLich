@@ -25,9 +25,6 @@ namespace Model.EF
         public string MaLoaiThanhVien { get; set; }
 
         [StringLength(50)]
-        public string MaQuyen { get; set; }
-
-        [StringLength(50)]
         public string TaiKhoan { get; set; }
 
         [StringLength(50)]
@@ -80,8 +77,6 @@ namespace Model.EF
         public virtual ICollection<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
 
         public virtual LoaiThanhVien LoaiThanhVien { get; set; }
-
-        public virtual Quyen Quyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TinTuc> TinTuc { get; set; }

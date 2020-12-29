@@ -13,7 +13,6 @@ namespace Model.EF
         public Quyen()
         {
             TaiKhoan = new HashSet<TaiKhoan>();
-            ThanhVien = new HashSet<ThanhVien>();
         }
 
         [Key]
@@ -24,8 +23,5 @@ namespace Model.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoan> TaiKhoan { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThanhVien> ThanhVien { get; set; }
     }
 }
