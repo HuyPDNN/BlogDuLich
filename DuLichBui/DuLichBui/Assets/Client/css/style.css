@@ -61,8 +61,113 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  background-color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
 
+.modal-body {
+    display: flex;
+    padding: 0;
+    border-radius: 4rem;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.modal-content {
+    border-radius: 4rem;
+    width: 140%;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+}
+
+    .modal-content h1, .modal-content h2, .modal-content h3 {
+        text-align: center;
+    }
+
+    .modal-content h1 {
+        font-size: 1.3em;
+        text-transform: uppercase;
+        margin: -50px 0 30px 0;
+    }
+
+    .modal-content h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-content h3 {
+        font-size: .8em;
+        letter-spacing: 2px;
+    }
+
+form {
+    font-size: .8em;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+    .column#main {
+        flex: 75%;
+        padding: 50px;
+        margin-top: 30px;
+        margin-left: -10px;
+    }
+
+#secondary {
+    background-color: #F9BC35;
+    border-radius: 0 4rem 4rem 0;
+    text-align: center;
+}
+
+#main .form-control {
+    border-radius: 0;
+    font-size: .9em;
+}
+
+.btn {
+    text-transform: uppercase;
+    border-radius: .15rem;
+    width: 200px;
+    padding: .150rem .75rem;
+    margin: 30px auto;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+    background: -moz-linear-gradient(left, #f1da36 0%, #fca86c 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f1da36 0%,#fca86c 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f1da36 0%,#fca86c 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fca86c',GradientType=1 ); /* IE6-9 */
+    Color format: Comments
+}
+
+    .btn-primary:hover {
+        border-color: rgba( 255, 255, 255, 0);
+    }
+
+#main .btn-primary {
+    width: 100%;
+}
+
+#secondary .btn-primary {
+    background: #f8f9fa4f;
+    color: #000;
+}
+
+.modal-body label {
+    margin-bottom: 0;
+}
+
+.sec-content {
+    margin-top: 85%;
+}
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
@@ -191,7 +296,9 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem; 
+  margin-left: -10px;
+}
 
 button {
   border-radius: 0; }
@@ -1610,6 +1717,26 @@ pre {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+.input-user {
+    display: block;
+    width: 300px;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    margin-left: -20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
   @media (prefers-reduced-motion: reduce) {
     .form-control {
       -webkit-transition: none;
@@ -2077,7 +2204,8 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: #007bff;
-  border-color: #007bff; }
+  border-color: #007bff;
+}
   .btn-primary:hover {
     color: #fff;
     background-color: #0069d9;
@@ -4783,13 +4911,17 @@ a.close.disabled {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
-  outline: 0; }
+  outline: 0;
+  width: 377px;
+  margin-left: 623px;
+
+
+}
+
 
 .modal-backdrop {
   position: fixed;
@@ -5411,7 +5543,7 @@ button.bg-danger:focus {
 }
 
 .set-account {
-    margin: 0 0 50px 20px;
+    margin: 0 30px 50px 10px;
 }
     .set-account select.language {
         border-radius: 50%;
@@ -5421,9 +5553,11 @@ button.bg-danger:focus {
         width: 120px;
         height: 40px;
         margin-right: 5px;
-        border: 0px ;
+        border: none ;
+        outline:none;
         border-radius: 10px 40px;
         text-align: center;
+        text-decoration: none;
     }
     .set-account .register {
         font-size:20px;
@@ -8562,7 +8696,33 @@ h1, h2, h3, h4, h5,
   .btn.btn-primary {
     background: #1eafed;
     border: 1px solid #1eafed;
-    color: #fff; }
+    color: #fff;
+    margin: 0 0 10px 0; 
+  }
+    .btn.btn-primary-login {
+        background: white;
+        border: 1px solid #1eafed;
+        color: #1eafed;
+        margin: 0 0 10px 0;
+        font-size: 15px;
+    }
+    .btn.btn-primary-login:hover {
+        border: 1px solid #1eafed;
+        background: #1eafed;
+        color: white;
+    }
+    .btn.btn-primary-user {
+        background: #1eafed;
+        border: 1px solid #1eafed;
+        color: #fff;
+        margin: 0 0 10px -20px;
+        width:300px;
+    }
+    .btn.btn-primary-user:hover {
+        border: 1px solid #1eafed;
+        background: transparent;
+        color: #1eafed;
+    }
     .btn.btn-primary:hover {
       border: 1px solid #1eafed;
       background: transparent;
@@ -9359,4 +9519,8 @@ textarea.form-control {
     stroke-dashoffset: -136px; } }
 bg-light #day {
     margin-left: 1040px;
+}
+.remember{
+    float:left;
+    margin-left: -70px;
 }
