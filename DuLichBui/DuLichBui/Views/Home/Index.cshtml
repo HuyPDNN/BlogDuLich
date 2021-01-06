@@ -217,33 +217,7 @@
 
                     @section Listinforight
                     {
-                        @*@{
-                            var session = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
-                        }*@
-                        @*@if (session == null)
-                         {
-                            <ul>
-                                @foreach (var item in Model)
-                                {
-                                    <li><a href="@item.Link" target="@item.Target">@item.Text</a></li>
-                                }
-
-                            </ul>
-                        }*@
-                        @*else*@
-                        @{
-                            if (Session["TaiKhoan"] != null)
-                            {
-                            <ul>
-                                <li>Xin chào:@Session["TaiKhoan"].ToString()</li>
-                                <li>@Html.ActionLink("Thoát", "Logout", "Home")</li>
-                            </ul>
-                            }
-                            else
-                            {
-                                Response.Redirect("/Home/Index");
-                            }
-                         }
+                        
                         <div>
 
                             <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
