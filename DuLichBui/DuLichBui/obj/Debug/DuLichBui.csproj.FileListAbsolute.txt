@@ -29,6 +29,8 @@ E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\DuLichBui.dll.config
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\DuLichBui.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\DuLichBui.pdb
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Antlr3.Runtime.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\EntityFramework.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\EntityFramework.SqlServer.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.AI.Agent.Intercept.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.AI.DependencyCollector.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -38,7 +40,10 @@ E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.AI.WindowsServer.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.ApplicationInsights.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.Web.Infrastructure.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Model.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Newtonsoft.Json.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\PagedList.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\PagedList.Mvc.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Helpers.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Mvc.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Optimization.dll
@@ -47,7 +52,13 @@ E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.WebPages.Deployment.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.WebPages.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.WebPages.Razor.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\WebGrease.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Model.pdb
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Model.dll.config
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\EntityFramework.xml
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\EntityFramework.SqlServer.xml
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\PagedList.xml
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\PagedList.Mvc.xml
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Helpers.xml
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Mvc.xml
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\System.Web.Optimization.xml

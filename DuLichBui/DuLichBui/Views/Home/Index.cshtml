@@ -1,4 +1,4 @@
-﻿@model DuLichBui.Areas.Admin.Models.LoginModel
+﻿@model DuLichBui.Models.DangNhapThanhVienModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -217,7 +217,33 @@
 
                     @section Listinforight
                     {
+                        @*@{
+                            var session = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+                        }*@
+                        @*@if (session == null)
+                         {
+                            <ul>
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="@item.Link" target="@item.Target">@item.Text</a></li>
+                                }
 
+                            </ul>
+                        }*@
+                        @*else*@
+                        @{
+                            if (Session["TaiKhoan"] != null)
+                            {
+                            <ul>
+                                <li>Xin chào:@Session["TaiKhoan"].ToString()</li>
+                                <li>@Html.ActionLink("Thoát", "Logout", "Home")</li>
+                            </ul>
+                            }
+                            else
+                            {
+                                Response.Redirect("/Home/Index");
+                            }
+                         }
                         <div>
 
                             <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
@@ -348,26 +374,36 @@
                     }
 
                     <!-- Form Đăng Nhập -->
+
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <div class="column" id="main">
                                         <h1>Đăng nhập </h1>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputName">Tài khoản</label>
-                                                <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Mật khẩu</label>
-                                                <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">
 
+                                        @using (Html.BeginForm("DangNhap", "Home", FormMethod.Post))
+                                        {
+                                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @*<label for="exampleInputName">Tài khoản</label>
+                                                    <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">*@
+                                                @Html.TextBoxFor(model => model.Taikhoan, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputName" })
                                             </div>
-                                            <input type="checkbox"> Nhớ mật khẩu
-                                            <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
-                                            <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
-                                        </form>
+                                                <div class="form-group">
+                                                    @*<label for="exampleInputPassword1">Mật khẩu</label>
+                                                        <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
+                                                    @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
+                                                </div>
+                                                @*<input type="checkbox"> Nhớ mật khẩu*@
+                                                <div class="checkbox">
+                                                    <label>
+                                                        @Html.CheckBoxFor(model => model.Nhomatkhau)Nhớ mật khẩu
+                                                    </label>
+                                                </div>
+                                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -417,5 +453,3 @@
         </div>
     </section>
 </div>
-
-
