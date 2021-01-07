@@ -219,26 +219,36 @@
                     {
                         
                         <div>
-
                             <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+                                @{
+                                    var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+                                }
+                                @if (ten == null)
+                                {
+                                    <div class="set-account">
+                                        <div>
+                                            <h5>Đăng kí chia sẻ bài viết nhận hoa hồng</h5>
+                                            <hr />
+                                        </div>
+                                        <div class="marquee">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
+                                                <marquee width="100%" behavior="alternate">Đăng kí</marquee>
+                                            </button>
 
-                                <div class="set-account">
-                                    <div>
-                                        <h5>Đăng kí chia sẻ bài viết nhận hoa hồng</h5>
-                                        <hr />
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-primary-login" data-toggle="modal" data-target="#exampleModal">
+                                                Đăng nhập
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="marquee">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
-                                            <marquee width="100%" behavior="alternate">Đăng kí</marquee>
-                                        </button>
 
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn btn-primary-login" data-toggle="modal" data-target="#exampleModal">
-                                            Đăng nhập
-                                        </button>
-                                    </div>
-                                </div>
+                                }
+                                else
+                                {
+                                    <p>Xin chào, @ten.TaiKhoan</p>
+                                    <a href="@Url.Action("Logout","Home")">Đăng xuất</a>
+                                }
                                 <div class="sidebar-box pt-md-4">
                                     <form action="#" class="search-form">
                                         <div class="form-group">
