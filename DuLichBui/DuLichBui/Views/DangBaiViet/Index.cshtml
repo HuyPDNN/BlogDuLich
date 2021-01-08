@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Model.EF.BaiViet>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div id="colorlib-main">
+        <button>Tạo bài viết mới</button>
+        <section class="ftco-section ftco-no-pt ftco-no-pb">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-xl-8 py-5 px-md-5">
+                        <div class="row pt-md-4">
+                            <div class="col-md-12">
+                                <div class="blog-entry ftco-animate d-md-flex">
+                                    <table class="table">
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.MaBaiViet)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.ThanhVien.HoTen)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TieuDe)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.NgayDang)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TongLuotXem)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TrangThai)
+                                            </th>
+                                            <th>Thao tác</th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MaBaiViet)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.ThanhVien.HoTen)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TheLoai.TenTheLoai)
+                                                </td>
+                                                <td>
+                                                    <a href="#">@Html.DisplayFor(modelItem => item.TieuDe)</a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NgayDang)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TongLuotXem)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TrangThai)
+                                                </td>
+                                                <td>
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.MaBaiViet }) |
+                                                    @Html.ActionLink("Details", "Details", new { id = item.MaBaiViet }) |
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.MaBaiViet })
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+

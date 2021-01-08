@@ -11,3 +11,17 @@ E:\DATN\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.xml
 E:\DATN\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.Mvc.xml
 E:\DATN\BlogDuLich\DuLichBui\Model\obj\Debug\Model.dll
 E:\DATN\BlogDuLich\DuLichBui\Model\obj\Debug\Model.pdb
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\Model.dll.config
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\Model.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\Model.pdb
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\EntityFramework.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\EntityFramework.xml
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.xml
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\obj\Debug\Model.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\Model\obj\Debug\Model.pdb

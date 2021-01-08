@@ -5570,7 +5570,6 @@ button.bg-danger:focus {
   background:black;
   position:absolute;
   margin-left:1120px;
-  z-index: 10000;
 }
 
 .set-account {
@@ -9558,6 +9557,6 @@ bg-light #day {
 #slideshow-page {
     background: white;
     width: 48%;
-    margin-left:20px;
+    margin-left:7px;
     margin-top:10px;
 }

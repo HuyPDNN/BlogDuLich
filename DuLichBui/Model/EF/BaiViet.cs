@@ -32,12 +32,9 @@ namespace Model.EF
 
         public string NoiDung { get; set; }
 
-        public string TacGia { get; set; }
-
         [Column(TypeName = "date")]
         public DateTime? NgayDang { get; set; }
 
-        public string TuKhoa { get; set; }
 
         public string Link { get; set; }
 
@@ -45,7 +42,7 @@ namespace Model.EF
 
         public int? TongLuotXem { get; set; }
 
-        public bool? TrangThai { get; set; }
+        public string TrangThai { get; set; }
 
         public virtual ThanhVien ThanhVien { get; set; }
 

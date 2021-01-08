@@ -164,6 +164,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TacGiaController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThanhVienController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaivietController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DangBaiVietController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DangNhapThanhVienController.cs" />
@@ -386,6 +388,7 @@
     <Content Include="App_Data\Scripts\respond.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\TacGia\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -424,6 +427,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\DangNhapThanhVien\Index.cshtml" />
     <Content Include="Views\Shared\_MenuDangNhap.cshtml" />
+    <Content Include="Views\DangBaiViet\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
