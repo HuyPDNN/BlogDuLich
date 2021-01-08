@@ -53,7 +53,7 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
-body {
+/*body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -65,8 +65,39 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 200px;
+}*/
+#slideshow {
+  overflow: hidden;
+  height: 200px;
+  width: 728px;
+  margin: 0 auto;
 }
 
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 14s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+    .slide img {
+        float: left;
+        height: 200px;
+        width: 728px;
+    }
+
+
+
+@-webkit-keyframes slide {
+  20% {margin-left: 0px;}
+  30% {margin-left: -728px;}
+  50% {margin-left: -728px;}
+  60% {margin-left: -1456px;}
+  80% {margin-left: -1456px;}
+}
 .modal-body {
     display: flex;
     padding: 0;
@@ -5539,7 +5570,7 @@ button.bg-danger:focus {
   background:black;
   position:absolute;
   margin-left:1120px;
-  z-index: 999;
+  z-index: 10000;
 }
 
 .set-account {
@@ -8363,10 +8394,10 @@ h1, h2, h3, h4, h5,
   font-family: "Lora", Arial, serif; }
 
 #colorlib-page {
-  width: 100%;
-  overflow: hidden;
-  position: relative; }
-
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 #colorlib-aside {
   padding-top: 2em;
   padding-bottom: 40px;
@@ -9523,4 +9554,10 @@ bg-light #day {
 .remember{
     float:left;
     margin-left: -70px;
+}
+#slideshow-page {
+    background: white;
+    width: 48%;
+    margin-left:20px;
+    margin-top:10px;
 }
