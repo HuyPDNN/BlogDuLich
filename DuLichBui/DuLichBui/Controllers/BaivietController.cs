@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace DuLichBui.Controllers
 {
-    public class LienheController : Controller
+    public class BaivietController : Controller
     {
-        // GET: Contact
+        // GET: Baiviet
         public ActionResult Index()
         {
             return View();

@@ -29,13 +29,31 @@
         <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
         <aside id="colorlib-aside" role="complementary" class="js-fullheight">
             <nav id="colorlib-main-menu" role="navigation">
-                <ul>
-                    <li class="colorlib-active"><a href="/trang-chu">Trang chủ</a></li>
-                    <li><a href="/du-lich">Du lịch</a></li>
-                    <li><a href="/am-thuc">Ẩm Thực</a></li>
-                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                    <li><a href="/lien-he">Liên hệ</a></li>
-                </ul>
+                @{
+                    var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+                }
+                @if (ten == null)
+                {
+                    <ul>
+                        <li class="colorlib-active"><a href="/trang-chu">Trang chủ</a></li>
+                        <li><a href="/du-lich">Du lịch</a></li>
+                        <li><a href="/am-thuc">Ẩm Thực</a></li>
+                        <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                        <li><a href="/lien-he">Liên hệ</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul>
+                        <li class="colorlib-active"><a href="/trang-chu">Trang chủ</a></li>
+                        <li><a href="/du-lich">Du lịch</a></li>
+                        <li><a href="/am-thuc">Ẩm Thực</a></li>
+                        <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                        <li><a href="/lien-he">Liên hệ</a></li>
+                        <li><a href="/dang-bai">Đăng bài</a></li>
+                    </ul>
+                }
+
             </nav>
             <div class="colorlib-footer">
                 <h1 id="colorlib-logo" class="mb-4"><a href="/trang-chu" style="background-image: url(/Assets/client/images/bg_1.jpg);">Du Lich <span id="bui">BUj</span></a></h1>

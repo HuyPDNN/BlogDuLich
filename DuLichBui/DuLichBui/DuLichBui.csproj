@@ -169,6 +169,7 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\TaiKhoanLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaivietController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -447,6 +448,9 @@
       <Project>{1EF105F3-DA2B-4F55-9787-F8A4F6F4C9C1}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Baiviet\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

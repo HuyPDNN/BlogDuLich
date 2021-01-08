@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DuLichBui.Controllers
 {
-    public class AboutController : Controller
+    public class ContactController : Controller
     {
         // GET: About
         public ActionResult Index()
