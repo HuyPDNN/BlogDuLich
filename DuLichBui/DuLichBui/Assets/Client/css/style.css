@@ -9560,3 +9560,15 @@ bg-light #day {
     margin-left:7px;
     margin-top:10px;
 }
+.avatar img{
+    width: 100px;
+    height: 100px;
+    margin: -30px 0 0 10px;
+    position:absolute;
+    
+}
+.infouser{
+    text-align:center;
+    position: relative;
+    margin: -20px 0 0 0; 
+}

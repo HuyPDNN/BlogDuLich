@@ -227,7 +227,7 @@
 
                     @section Listinforight
                     {
-                        
+
                         <div>
                             <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
                                 @{
@@ -256,8 +256,17 @@
                                 }
                                 else
                                 {
-                                    <p>Xin chào, @ten.TaiKhoan</p>
-                                    <a href="@Url.Action("Logout","Home")">Đăng xuất</a>
+                                    <div class="avatar">
+                                        
+                                        <img src="/Assets/Client/images/avatar.png" />
+                                    </div>
+                                    <div class="infouser">
+                                        <p>Thành viên, @ten.TaiKhoan</p>
+                                        <a href="/chinh-sua-thong-tin"><p>Chỉnh sửa thông tin</p></a>
+                                        <a href="@Url.Action("Logout","Home")">Đăng xuất</a>
+                                    </div>
+                                    
+                                   
                                 }
                                 <div class="sidebar-box pt-md-4">
                                     <form action="#" class="search-form">
@@ -372,18 +381,18 @@
                                                     <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">*@
                                                 @Html.TextBoxFor(model => model.Taikhoan, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputName" })
                                             </div>
-                                                <div class="form-group">
-                                                    @*<label for="exampleInputPassword1">Mật khẩu</label>
-                                                        <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
-                                                    @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
-                                                </div>
+                                            <div class="form-group">
+                                                @*<label for="exampleInputPassword1">Mật khẩu</label>
+                                                    <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
+                                                @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
+                                            </div>
                                                 @*<input type="checkbox"> Nhớ mật khẩu*@
                                                 <div class="checkbox">
                                                     <label>
                                                         @Html.CheckBoxFor(model => model.Nhomatkhau)Nhớ mật khẩu
                                                     </label>
                                                 </div>
-                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập"/>
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
                                                 <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
                                         }
                                     </div>
