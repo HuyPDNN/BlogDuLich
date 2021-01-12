@@ -32,9 +32,10 @@ namespace Model.EF
 
         public string NoiDung { get; set; }
 
-        [Column(TypeName = "date")]
+        //[Column(TypeName = "date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgayDang { get; set; }
-
 
         public string Link { get; set; }
 
@@ -42,7 +43,7 @@ namespace Model.EF
 
         public int? TongLuotXem { get; set; }
 
-        public string TrangThai { get; set; }
+        public bool? TrangThai { get; set; }
 
         public virtual ThanhVien ThanhVien { get; set; }
 

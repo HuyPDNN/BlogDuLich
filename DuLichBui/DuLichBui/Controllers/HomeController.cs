@@ -11,9 +11,18 @@ namespace DuLichBui.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
+            ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet();
             return View();
+        }
+        public ActionResult DanhSachBaiViet()
+        {
+            //string date = DateTime.Today.ToLongDateString("");
+
+            var list = new BaiVietDao().DanhSachBaiViet();
+            return View(list);
         }
         public ActionResult DangNhap(DangNhapThanhVienModel model)
         {

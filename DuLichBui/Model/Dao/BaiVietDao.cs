@@ -21,9 +21,9 @@ namespace Model.Dao
             db.SaveChanges();
             return entity.MaBaiViet;
         }
-        public IEnumerable<BaiViet> DanhSachBaiViet( )
+        public IEnumerable<BaiViet> DanhSachBaiViet()
         {
-            return db.BaiViet.OrderBy(o => o.NgayDang).ToList();
+            return db.BaiViet.Where(o => o.TrangThai == true).OrderByDescending(o => o.NgayDang).ToList();
         }
         //public int TrangThaiBaiViet(string baiviet)
         //{

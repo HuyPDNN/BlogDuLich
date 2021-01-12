@@ -17,7 +17,6 @@ namespace Model.EF
         public virtual DbSet<DanhGiaBaiViet> DanhGiaBaiViet { get; set; }
         public virtual DbSet<LoaiThanhVien> LoaiThanhVien { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
         public virtual DbSet<ThanhVien> ThanhVien { get; set; }
         public virtual DbSet<TheLoai> TheLoai { get; set; }

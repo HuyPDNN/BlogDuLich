@@ -64,19 +64,16 @@
     <Compile Include="EF\BaiViet.cs" />
     <Compile Include="EF\BinhLuanBaiViet.cs" />
     <Compile Include="EF\DanhGiaBaiViet.cs" />
-    <Compile Include="EF\DuLichBuiDbContext.cs" />
+    <Compile Include="EF\DulichBuiDbContext.cs" />
     <Compile Include="EF\LoaiThanhVien.cs" />
     <Compile Include="EF\Quyen.cs" />
-    <Compile Include="EF\sysdiagrams.cs" />
     <Compile Include="EF\TaiKhoan.cs" />
     <Compile Include="EF\ThanhVien.cs" />
     <Compile Include="EF\TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
