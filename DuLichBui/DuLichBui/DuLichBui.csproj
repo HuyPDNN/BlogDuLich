@@ -184,6 +184,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anh\hoc-nau-bun-bo-hue.jpg" />
+    <Content Include="Anh\hue-kich-cau-du-lich-c.jpg" />
+    <Content Include="Anh\tfd_200910035403_147221.jpg" />
     <Content Include="Assets\Client\css\ajax-loader.gif" />
     <Content Include="Assets\Client\css\animate.css" />
     <Content Include="Assets\Client\css\aos.css" />
@@ -428,6 +431,7 @@
     <Content Include="Views\DangNhapThanhVien\Index.cshtml" />
     <Content Include="Views\Shared\_MenuDangNhap.cshtml" />
     <Content Include="Views\DangBaiViet\Index.cshtml" />
+    <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

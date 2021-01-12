@@ -15,7 +15,7 @@ namespace Model.Dao
         {
             db = new DulichBuiDbContext();
         }
-        public String ThemBaiViet(BaiViet entity)
+        public String Insert(BaiViet entity)
         {
             db.BaiViet.Add(entity);
             db.SaveChanges();
@@ -25,26 +25,6 @@ namespace Model.Dao
         {
             return db.BaiViet.Where(o => o.TrangThai == true).OrderByDescending(o => o.NgayDang).ToList();
         }
-        //public int TrangThaiBaiViet(string baiviet)
-        //{
-        //    var result = db.BaiViet.SingleOrDefault(o => o.MaBaiViet == baiviet);
-        //    if (result.TrangThai == "Lưu Nháp")
-        //    {
-        //        return 0;
-        //    }
-        //    else if (result.TrangThai == "Chờ Phê Duyệt")
-        //    {
-        //        return 1;
-        //    }
-        //    else if(result.TrangThai == "Đã Xuất Bản")
-        //    {
-        //        return 2;
-        //    }
-        //    else
-        //    {
-        //        return -1;
-        //    }
-        //}
     }
 }
 

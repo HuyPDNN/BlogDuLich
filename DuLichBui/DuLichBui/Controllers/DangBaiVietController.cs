@@ -17,5 +17,28 @@ namespace DuLichBui.Controllers
             var model = dao.DanhSachBaiViet().ToList();
             return View(model);
         }
+        [HttpGet]
+        public ActionResult ThemBaiViet()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ThemBaiViet(BaiViet bv)
+        {
+            if (ModelState.IsValid)
+            {
+                string id = dao.Insert(bv);
+                if(id != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Thêm bài viêt không thành công");
+                }
+            }
+            return View("ThemBaiViet");
+
+        }
     }
 }

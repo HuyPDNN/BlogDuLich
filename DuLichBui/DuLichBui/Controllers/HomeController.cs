@@ -19,8 +19,6 @@ namespace DuLichBui.Controllers
         }
         public ActionResult DanhSachBaiViet()
         {
-            //string date = DateTime.Today.ToLongDateString("");
-
             var list = new BaiVietDao().DanhSachBaiViet();
             return View(list);
         }
