@@ -3,6 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var danhsach = (List<Model.EF.BaiViet>)ViewBag.danhsachbaiviet;
+    var listinfothanhvien = (List<Model.EF.ThanhVien>)ViewBag.listinfothanhvien;
+    var dstheloai = (List<Model.EF.TheLoai>)ViewBag.dsTheLoai;
 }
 
 <div id="colorlib-main">
@@ -31,9 +33,10 @@
                                         <h3 class="mb-2"><a href="single.html">@item.TieuDe</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
-                                                <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}",item.NgayDang))</span>
+                                                <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayDang))</span>
                                                 <span><a href="single.html"><i class="icon-folder-o mr-2"></i>@item.TheLoai.TenTheLoai</a></span>
-                                                <span><i class="icon-comment2 mr-2"></i>@item.ThanhVien.HoTen</span>
+                                                <span><i class="icon-person"></i>@item.ThanhVien.HoTen</span>
+                                                @*<span><i class="icon-comment2 mr-2"></i>@item.ThanhVien.HoTen</span>*@
                                             </p>
                                         </div>
                                         <p class="mb-4">@item.MieuTa</p>
@@ -90,16 +93,17 @@
                                 }
                                 else
                                 {
-                                    <div class="avatar">
-
-                                        <img src="/Assets/Client/images/avatar.png" />
-                                    </div>
-                                    <div class="infouser">
-                                        <p>Thành viên, @ten.TaiKhoan</p>
-                                        <a href="/chinh-sua-thong-tin"><p>Chỉnh sửa thông tin</p></a>
-                                        <a href="@Url.Action("Logout","Home")">Đăng xuất</a>
-                                    </div>
-
+                                    foreach (var item in listinfothanhvien)
+                                    {
+                                        <div class="avatar">
+                                            <img src="~/Anh/@item.AnhDaiDien" />
+                                        </div>
+                                        <div class="infouser">
+                                            <p>Thành viên, <span>@item.HoTen</span> </p>
+                                            <a href="/thong-tin-thanh-vien"><p>Thông tin chi tiết</p></a>
+                                            <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
+                                        </div>
+                                    }
 
                                 }
                                 <div class="sidebar-box pt-md-4">
@@ -113,11 +117,11 @@
                                 <div class="sidebar-box ftco-animate">
                                     <h3 class="sidebar-heading">Thể loại</h3>
                                     <ul class="categories">
-                                        <li><a href="#">Thời trang <span>(6)</span></a></li>
-                                        <li><a href="#">Thiên nhiên <span>(8)</span></a></li>
-                                        <li><a href="#">Du lịch <span>(2)</span></a></li>
-                                        <li><a href="#">Món ăn <span>(2)</span></a></li>
-                                        <li><a href="#">Chụp ảnh <span>(7)</span></a></li>
+                                        @foreach (var item in dstheloai)
+                                        {
+                                            <li><a href="#">@item.TenTheLoai<span>(6)</span></a></li>
+                                        }
+                                        
                                     </ul>
                                 </div>
                                 <div class="sidebar-box ftco-animate">
@@ -207,7 +211,7 @@
                                     <div class="column" id="main">
                                         <h1>Đăng nhập </h1>
 
-                                        @using (Html.BeginForm("DangNhap", "Home", FormMethod.Post))
+                                        @using (Html.BeginForm("DangNhap", "DangNhapThanhVien", FormMethod.Post))
                                         {
                                             @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                                             <div class="form-group">
@@ -227,7 +231,7 @@
                                                 </label>
                                             </div>
                                             <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
-                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
+                                            <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
                                         }
                                     </div>
                                 </div>

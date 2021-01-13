@@ -15,51 +15,32 @@ namespace DuLichBui.Controllers
         public ActionResult Index()
         {
             ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet();
+            ViewBag.listinfothanhvien = new DangNhapThanhVienDao().ListInfoThanhVien();
+            ViewBag.dsTheLoai = new TheLoaiDao().DSTheLoai();
             return View();
+        }
+        public ActionResult ListInfoThanhVien()
+        {
+            var list = new DangNhapThanhVienDao().ListInfoThanhVien();
+            return View(list);
+        }
+        public ActionResult DSTheLoai()
+        {
+            var list = new TheLoaiDao().DSTheLoai();
+            return View(list);
         }
         public ActionResult DanhSachBaiViet()
         {
             var list = new BaiVietDao().DanhSachBaiViet();
             return View(list);
         }
-        public ActionResult DangNhap(DangNhapThanhVienModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var dao = new DangNhapThanhVienDao();
-                var result = dao.DangNhapThanhVien(model.Taikhoan, model.Matkhau);
-                if (result == 1)
-                {
-                    var taikhoan = dao.GetById(model.Taikhoan);
-                    var taikhoanSession = new TaiKhoanLogin();
-                    taikhoanSession.TaiKhoan = taikhoan.TaiKhoan;
-                    taikhoanSession.TaiKhoanID = taikhoan.MaThanhVien;
-                    Session.Add(CommonConstants.USER_SESSION, taikhoanSession);
-                    return RedirectToAction("Index","Home");
-                }
-                else if (result == 0)
-                {
-                    ModelState.AddModelError("", "Tài khoản không tồn tại");
-                }
-                else if (result == -1)
-                {
-                    ModelState.AddModelError("", "Tài Khoản đang bị khóa");
-                }
-                else if (result == -2)
-                {
-                    ModelState.AddModelError("", "Mật khẩu không đúng");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Đăng nhập không đúng");
-                }
-            }
-            return View("Index");
-        }
-        public ActionResult Logout()
-        {
-            Session[CommonConstants.USER_SESSION] = null;
-            return Redirect("/");
-        }
+
+        
+
+        //public ActionResult CapNhatThongTiinThanhVien(string mathanhvien)
+        //{
+        //    var thanhvien = new DangNhapThanhVienDao().ViewDetail(mathanhvien);
+        //    return View(thanhvien);
+        //}
     }
 }

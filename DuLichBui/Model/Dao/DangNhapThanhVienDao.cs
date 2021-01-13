@@ -14,10 +14,41 @@ namespace Model.Dao
         {
             db = new DulichBuiDbContext();
         }
+        public IEnumerable<ThanhVien> ListInfoThanhVien()
+        {
+            return db.ThanhVien.ToList();
+        }
         public ThanhVien GetById(string taiKhoan)
         {
             return db.ThanhVien.SingleOrDefault(o => o.TaiKhoan == taiKhoan);
         }
+        public ThanhVien ViewDetail(string maThanhVien)
+        {
+            return db.ThanhVien.Find(maThanhVien);
+        }
+        //public bool CapNhatThongTinThanhVien(ThanhVien entity)
+        //{
+        //    try
+        //    {
+        //        var user = db.ThanhVien.Find(entity.MaThanhVien);
+        //        user.HoTen = entity.HoTen;
+        //        user.GioiTinh = entity.GioiTinh;
+        //        user.NgaySinh = entity.NgaySinh;
+        //        user.SDT = entity.SDT;
+        //        user.DiaChi = entity.DiaChi;
+        //        user.ThanhPho = entity.ThanhPho;
+        //        user.QuocGia = entity.QuocGia;
+        //        user.MoTaBanThan = entity.MoTaBanThan;
+        //        user.MatKhau = entity.MatKhau;
+        //        user.FaceBookLink = entity.FaceBookLink;
+        //        user.AnhDaiDien = entity.AnhDaiDien;
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;
+        //    }
+        //}
         public int DangNhapThanhVien(string taikhoan, string matkhau)
         {
             var result = db.ThanhVien.SingleOrDefault(o => o.TaiKhoan == taikhoan);

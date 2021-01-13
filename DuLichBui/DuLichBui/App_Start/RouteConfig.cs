@@ -58,6 +58,12 @@ namespace DuLichBui
      namespaces: new[] { "DuLichBui.Controllers" }
  );
             routes.MapRoute(
+     name: "ThongTinThanhVien",
+     url: "thong-tin-thanh-vien",
+     defaults: new { controller = "DangNhapThanhVien", action = "ThongTinChiTietThanhVien", id = UrlParameter.Optional },
+     namespaces: new[] { "DuLichBui.Controllers" }
+ );
+            routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

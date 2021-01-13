@@ -9563,12 +9563,17 @@ bg-light #day {
 .avatar img{
     width: 100px;
     height: 100px;
-    margin: -30px 0 0 10px;
+    margin: -20px 0 0 10px;
     position:absolute;
     
 }
 .infouser{
-    text-align:center;
+   
     position: relative;
-    margin: -20px 0 0 0; 
+    margin: -30px 0 0 150px; 
+}
+.infouser span{
+    font-size: 20px;
+    color: blueviolet;
+    padding: 0 0 0 5px;
 }
