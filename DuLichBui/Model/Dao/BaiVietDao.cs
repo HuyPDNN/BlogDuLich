@@ -25,6 +25,10 @@ namespace Model.Dao
         {
             return db.BaiViet.Where(o => o.TrangThai == true).OrderByDescending(o => o.NgayDang).ToPagedList(page,pagesize);
         }
+        public BaiViet Chitiet(int? id)
+        {
+            return db.BaiViet.Find(id);
+        }
     }
 }
 

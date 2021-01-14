@@ -57,13 +57,13 @@ namespace DuLichBui.Controllers
             Session[CommonConstants.USER_SESSION] = null;
             return Redirect("/");
         }
-        public ActionResult ThongTinChiTietThanhVien(int mathanhvien)
+        public ActionResult ThongTinChiTietThanhVien(int? mathanhvien)
         {
             //var thanhvien = new DangNhapThanhVienDao().ViewDetail(mathanhvien);
             //ViewBag.loaithanhvien = new TheLoaiDao().ViewDetail(thanhvien.MaLoaiThanhVien);
             //return View(thanhvien);
             var db = new DulichBuiDbContext();
-            if (mathanhvien>0)
+            if (mathanhvien.HasValue )
             {
                 ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
                 return View(tv);

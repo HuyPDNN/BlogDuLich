@@ -30,6 +30,7 @@
                         
                         @foreach (var item in danhsach)
                         {
+                            //var url = "/chi-tiet-bai-viet/" + item.MaBaiViet;
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
                                     <a href="single.html" class="img img-2" style="background-image: url(/Anh/@item.Image);"></a>
@@ -44,7 +45,9 @@
                                             </p>
                                         </div>
                                         <p class="mb-4">@item.MieuTa</p>
-                                        <p><a href="#" class="btn-custom">Đọc thêm <span class="ion-ios-arrow-forward"></span></a></p>
+                                        @*@Html.ActionLink("Đọc thêm","Index","ChiTietBaiViet",new { id = @item.MaBaiViet})*@
+                                        <a href="@Url.Action("Index","ChiTietBaiViet",new {id = @item.MaBaiViet})">Đọc Thêm ></a>
+                                        @*<p><a href="#" class="btn-custom">Đọc thêm <span class="ion-ios-arrow-forward"></span></a></p>*@
                                     </div>
                                 </div>
                             </div>
@@ -95,9 +98,9 @@
                                             <img src="~/Anh/@item.AnhDaiDien" />
                                         </div>
                                             <div class="infouser">
-                                                <p>Thành viên, <span>@item.HoTen</span> </p>
+                                                <p>Xin chào, <span>@item.HoTen</span> </p>
                                                 <p>@Html.ActionLink("Xem Chi Tiết", "ThongTinChiTietThanhVien", new { id = item.MaThanhVien })</p>
-                                                <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
+                                                <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
                                             </div>
                                     }
 

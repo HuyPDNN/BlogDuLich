@@ -64,6 +64,12 @@ namespace DuLichBui
      namespaces: new[] { "DuLichBui.Controllers" }
  );
             routes.MapRoute(
+  name: "ChiTietBaiViet",
+  url: "chi-tiet-bai-viet",
+  defaults: new { controller = "ChiTietBaiViet", action = "Index", id = UrlParameter.Optional },
+  namespaces: new[] { "DuLichBui.Controllers" }
+);
+            routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

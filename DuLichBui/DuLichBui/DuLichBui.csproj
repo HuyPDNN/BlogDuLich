@@ -170,7 +170,7 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\TaiKhoanLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\BaivietController.cs" />
+    <Compile Include="Controllers\ChiTietBaiVietController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DangBaiVietController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
@@ -184,9 +184,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anh\036726eebb2c05364d92e8af4c8bcc02.png" />
+    <Content Include="Anh\avatar.jpg" />
+    <Content Include="Anh\avatar3.jpg" />
     <Content Include="Anh\hoc-nau-bun-bo-hue.jpg" />
     <Content Include="Anh\hue-kich-cau-du-lich-c.jpg" />
     <Content Include="Anh\tfd_200910035403_147221.jpg" />
+    <Content Include="Anh\avatar2.jpg" />
     <Content Include="Assets\Admin\css\sb-admin-2.css" />
     <Content Include="Assets\Admin\css\sb-admin-2.min.css" />
     <Content Include="Assets\Admin\img\undraw_posting_photo.svg" />
@@ -6238,6 +6242,7 @@
     <Content Include="Views\DangBaiViet\Index.cshtml" />
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
     <Content Include="Views\Home\ThongTinChiTietThanhVien.cshtml" />
+    <Content Include="Views\ChiTietBaiViet\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -6268,7 +6273,6 @@
     <Folder Include="Assets\Plugins\ckfinder\core\connector\php\vendor\cksource\ckfinder\.git\refs\tags\" />
     <Folder Include="Assets\Plugins\ckfinder\core\connector\php\vendor\league\flysystem-azure\.git\branches\" />
     <Folder Include="Assets\Plugins\ckfinder\core\connector\php\vendor\league\flysystem-azure\.git\refs\tags\" />
-    <Folder Include="Views\Baiviet\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
