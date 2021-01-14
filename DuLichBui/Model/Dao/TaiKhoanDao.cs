@@ -24,6 +24,12 @@ namespace Model.Dao
         {
             return db.TaiKhoan.SingleOrDefault(o => o.TaiKhoan1 == taiKhoan);
         }
+        public long Insert(TaiKhoan taikhoan)
+        {
+            db.TaiKhoan.Add(taikhoan);
+            db.SaveChanges();
+            return taikhoan.MaTaiKhoan;
+        }
         public int Login(string taikhoan, string matkhau)
         {
             var result = db.TaiKhoan.SingleOrDefault(o => o.TaiKhoan1 == taikhoan);

@@ -24,18 +24,6 @@ namespace Model.EF
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BaiViet>()
-                .Property(e => e.MaBaiViet)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BaiViet>()
-                .Property(e => e.MaTheLoai)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BaiViet>()
-                .Property(e => e.MaThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BaiViet>()
                 .Property(e => e.Link)
                 .IsUnicode(false);
 
@@ -43,46 +31,10 @@ namespace Model.EF
                 .Property(e => e.Image)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<BinhLuanBaiViet>()
-                .Property(e => e.MaBinhLuan)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BinhLuanBaiViet>()
-                .Property(e => e.MaBaiViet)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BinhLuanBaiViet>()
-                .Property(e => e.MaThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DanhGiaBaiViet>()
-                .Property(e => e.MaDanhGia)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DanhGiaBaiViet>()
-                .Property(e => e.MaBaiViet)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DanhGiaBaiViet>()
-                .Property(e => e.MaThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LoaiThanhVien>()
-                .Property(e => e.MaLoaiThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Quyen>()
-                .Property(e => e.MaQuyen)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Quyen>()
                 .HasMany(e => e.TaiKhoan)
                 .WithOptional(e => e.Quyen1)
                 .HasForeignKey(e => e.Quyen);
-
-            modelBuilder.Entity<TaiKhoan>()
-                .Property(e => e.MaTaiKhoan)
-                .IsUnicode(false);
 
             modelBuilder.Entity<TaiKhoan>()
                 .Property(e => e.TaiKhoan1)
@@ -98,18 +50,6 @@ namespace Model.EF
 
             modelBuilder.Entity<TaiKhoan>()
                 .Property(e => e.AnhDaiDien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TaiKhoan>()
-                .Property(e => e.Quyen)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ThanhVien>()
-                .Property(e => e.MaThanhVien)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<ThanhVien>()
-                .Property(e => e.MaLoaiThanhVien)
                 .IsUnicode(false);
 
             modelBuilder.Entity<ThanhVien>()
@@ -143,10 +83,6 @@ namespace Model.EF
             modelBuilder.Entity<ThanhVien>()
                 .Property(e => e.TienHoaHong)
                 .HasPrecision(18, 0);
-
-            modelBuilder.Entity<TheLoai>()
-                .Property(e => e.MaTheLoai)
-                .IsUnicode(false);
         }
     }
 }

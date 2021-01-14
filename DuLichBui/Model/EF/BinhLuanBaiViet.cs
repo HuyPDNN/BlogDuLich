@@ -10,14 +10,11 @@ namespace Model.EF
     public partial class BinhLuanBaiViet
     {
         [Key]
-        [StringLength(50)]
-        public string MaBinhLuan { get; set; }
+        public int MaBinhLuan { get; set; }
 
-        [StringLength(50)]
-        public string MaBaiViet { get; set; }
+        public int? MaBaiViet { get; set; }
 
-        [StringLength(50)]
-        public string MaThanhVien { get; set; }
+        public int? MaThanhVien { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? NgayBinhLuan { get; set; }

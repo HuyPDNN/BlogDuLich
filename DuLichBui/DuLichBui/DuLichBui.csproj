@@ -6197,6 +6197,7 @@
     <Content Include="Assets\Plugins\ckfinder\userfiles\.htaccess" />
     <Content Include="Areas\Admin\Views\NhanVien\DanhSachTaiKhoan.cshtml" />
     <Content Include="Areas\Admin\Views\BaiViet\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\ThemNhanVien.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -16,8 +16,7 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaTheLoai { get; set; }
+        public int MaTheLoai { get; set; }
 
         public string TenTheLoai { get; set; }
 

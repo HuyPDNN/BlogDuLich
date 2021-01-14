@@ -15,7 +15,7 @@ namespace Model.Dao
         {
             db = new DulichBuiDbContext();
         }
-        public String Insert(BaiViet entity)
+        public long Insert(BaiViet entity)
         {
             db.BaiViet.Add(entity);
             db.SaveChanges();

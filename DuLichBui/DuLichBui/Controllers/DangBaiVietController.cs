@@ -27,8 +27,8 @@ namespace DuLichBui.Controllers
         {
             if (ModelState.IsValid)
             {
-                string id = dao.Insert(bv);
-                if(id != null)
+                long id = dao.Insert(bv);
+                if(id >0)
                 {
                     return RedirectToAction("Index", "Home");
                 }

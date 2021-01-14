@@ -18,12 +18,9 @@ namespace Model.EF
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [StringLength(50)]
-        public string MaThanhVien { get; set; }
+        public int MaThanhVien { get; set; }
 
-        [StringLength(50)]
-        public string MaLoaiThanhVien { get; set; }
+        public int? MaLoaiThanhVien { get; set; }
 
         [StringLength(50)]
         public string TaiKhoan { get; set; }

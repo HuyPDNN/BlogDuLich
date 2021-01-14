@@ -34,17 +34,12 @@ namespace DuLichBui.Controllers
             var list = new BaiVietDao().DanhSachBaiViet(page,pagesize);
             return View(list);
         }
-        public ActionResult ThongTinChiTietThanhVien(string mathanhvien = "")
+        public ActionResult ThongTinChiTietThanhVien(int? mathanhvien)
         {
-       
-            var db = new DulichBuiDbContext();
-            if (mathanhvien != null)
-            {
-                ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
-                return View(tv);
-            }
-            else
-                return HttpNotFound("không");
+
+            var thongtin = new DangNhapThanhVienDao().ViewDetail(mathanhvien.Value);
+            return View(thongtin);
+
 
         }
 

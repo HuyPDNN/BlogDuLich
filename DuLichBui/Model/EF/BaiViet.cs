@@ -17,14 +17,11 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaBaiViet { get; set; }
+        public int MaBaiViet { get; set; }
 
-        [StringLength(50)]
-        public string MaTheLoai { get; set; }
+        public int? MaTheLoai { get; set; }
 
-        [StringLength(50)]
-        public string MaThanhVien { get; set; }
+        public int? MaThanhVien { get; set; }
 
         public string TieuDe { get; set; }
 
@@ -32,9 +29,7 @@ namespace Model.EF
 
         public string NoiDung { get; set; }
 
-        //[Column(TypeName = "date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [Column(TypeName = "date")]
         public DateTime? NgayDang { get; set; }
 
         public string Link { get; set; }

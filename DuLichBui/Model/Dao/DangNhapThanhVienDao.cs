@@ -26,7 +26,7 @@ namespace Model.Dao
         //{
         //    return db.ThanhVien.Find(mathanhvien);
         //}
-        public ThanhVien ViewDetail(string mathanhvien)
+        public ThanhVien ViewDetail(int mathanhvien)
         {
             return db.ThanhVien.SingleOrDefault(o=> o.MaThanhVien == mathanhvien);
 

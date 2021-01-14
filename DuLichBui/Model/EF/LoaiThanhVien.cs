@@ -16,8 +16,7 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaLoaiThanhVien { get; set; }
+        public int MaLoaiThanhVien { get; set; }
 
         public string TenLoaiThanhVien { get; set; }
 

@@ -10,8 +10,7 @@ namespace Model.EF
     public partial class TaiKhoan
     {
         [Key]
-        [StringLength(50)]
-        public string MaTaiKhoan { get; set; }
+        public int MaTaiKhoan { get; set; }
 
         [Column("TaiKhoan")]
         [StringLength(50)]
@@ -40,8 +39,7 @@ namespace Model.EF
 
         public int? TienLuong { get; set; }
 
-        [StringLength(50)]
-        public string Quyen { get; set; }
+        public int? Quyen { get; set; }
 
         public bool? TrangThai { get; set; }
 

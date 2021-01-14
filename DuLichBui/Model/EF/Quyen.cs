@@ -16,8 +16,7 @@ namespace Model.EF
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaQuyen { get; set; }
+        public int MaQuyen { get; set; }
 
         public string TenQuyen { get; set; }
 
