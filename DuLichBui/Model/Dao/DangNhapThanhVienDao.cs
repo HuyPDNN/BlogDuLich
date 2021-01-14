@@ -28,7 +28,7 @@ namespace Model.Dao
         //}
         public ThanhVien ViewDetail(string mathanhvien)
         {
-            return db.thanhvien.singleordefault(o=> o.mathanhvien == mathanhvien);
+            return db.ThanhVien.SingleOrDefault(o=> o.MaThanhVien == mathanhvien);
 
         }
         //public bool CapNhatThongTinThanhVien(ThanhVien entity)

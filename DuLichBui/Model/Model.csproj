@@ -61,6 +61,7 @@
     <Compile Include="Dao\BaiVietDao.cs" />
     <Compile Include="Dao\DangNhapThanhVienDao.cs" />
     <Compile Include="Dao\TaiKhoanDao.cs" />
+    <Compile Include="Dao\TheLoaiDao.cs" />
     <Compile Include="EF\BaiViet.cs" />
     <Compile Include="EF\BinhLuanBaiViet.cs" />
     <Compile Include="EF\DanhGiaBaiViet.cs" />

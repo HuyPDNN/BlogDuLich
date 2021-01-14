@@ -12,9 +12,9 @@ namespace DuLichBui.Controllers
     public class HomeController : Controller
     {
 
-        public ActionResult Index()
+        public ActionResult Index(int page = 1 , int pagesize = 10)
         {
-            ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet();
+            ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet(page,pagesize);
             ViewBag.listinfothanhvien = new DangNhapThanhVienDao().ListInfoThanhVien();
             ViewBag.dsTheLoai = new TheLoaiDao().DSTheLoai();
             return View();
@@ -29,9 +29,9 @@ namespace DuLichBui.Controllers
             var list = new TheLoaiDao().DSTheLoai();
             return View(list);
         }
-        public ActionResult DanhSachBaiViet()
+        public ActionResult DanhSachBaiViet(int page = 1 , int pagesize = 10)
         {
-            var list = new BaiVietDao().DanhSachBaiViet();
+            var list = new BaiVietDao().DanhSachBaiViet(page,pagesize);
             return View(list);
         }
         public ActionResult ThongTinChiTietThanhVien(string mathanhvien = "")

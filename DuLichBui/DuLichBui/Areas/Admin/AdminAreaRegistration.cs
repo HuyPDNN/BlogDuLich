@@ -27,7 +27,7 @@ namespace DuLichBui.Areas.Admin
             context.MapRoute(
             name: "NhanVien",
             url: "nhan-vien",
-            defaults: new { controller = "NhanVien", action = "Index", id = UrlParameter.Optional }
+            defaults: new { controller = "NhanVien", action = "DanhSachTaiKhoan", id = UrlParameter.Optional }
              );
             context.MapRoute(
            name: "ThanhVien",

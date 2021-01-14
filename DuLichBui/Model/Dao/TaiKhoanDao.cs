@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Model.Dao
 {
@@ -13,6 +15,10 @@ namespace Model.Dao
         public TaiKhoanDao()
         {
             db = new DulichBuiDbContext();
+        }
+        public IEnumerable<TaiKhoan> danhsach(int page, int pagesize)
+        {
+            return db.TaiKhoan.OrderByDescending(o => o.NgayDangKi).ToPagedList(page, pagesize);
         }
         public TaiKhoan GetById(string taiKhoan)
         {

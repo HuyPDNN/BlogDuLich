@@ -18,6 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/Assets/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
@@ -40,31 +41,19 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Bảng Điều Khiển</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-diagnoses"></i>
-                    <span>Nhân Viên</span>
+                    <span>Cập nhật thông tin</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tùy Chỉnh:</h6>
-                        <a class="collapse-item" href="/nhan-vien">Danh Sách Nhân Viên</a>
-                        <a class="collapse-item" href="#">Thêm Nhân Viên</a>
-                        <a class="collapse-item" href="#">Sửa Nhân Viên</a>
-                        <a class="collapse-item" href="#">Xóa Nhân Viên</a>
+                        <a class="collapse-item" href="/nhan-vien">Nhân viên</a>
+                        <a class="collapse-item" href="#">Thành viên</a>
+                        <a class="collapse-item" href="/bai-viet">Bài viết</a>
                     </div>
                 </div>
             </li>
@@ -74,29 +63,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fab fa-creative-commons-by"></i>
-                    <span>Thành Viên</span>
+                    <span>Tìm kiếm</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tùy Chỉnh:</h6>
-                        <a class="collapse-item" href="/thanh-vien">Danh Sách Thành Viên</a>
-                        <a class="collapse-item" href="#">Xóa Thành Viên</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                   aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Bài Viết</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tùy Chỉnh:</h6>
-                        <a class="collapse-item" href="/bai-viet">Danh Sách Bài Viết</a>
+                        <a class="collapse-item" href="/thanh-vien">Tên bài viết</a>
+                        <a class="collapse-item" href="#">Tác giả</a>
+                        <a class="collapse-item" href="#">Thể loại</a>
                     </div>
                 </div>
             </li>
@@ -105,7 +80,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Thống Kê</span>
+                    <span>Báo cáo thống Kê</span>
                 </a>
             </li>
 
@@ -151,7 +126,7 @@
                             </div>
                         </div>
                     </form>
-                    </nav>
+                </nav>
                 @RenderBody()
             </div>
             <!-- End of Main Content -->
@@ -169,7 +144,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
- 
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="/Assets/Admin/vendor/jquery/jquery.min.js"></script>

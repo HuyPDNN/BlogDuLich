@@ -12,9 +12,9 @@ namespace DuLichBui.Controllers
     {
         // GET: ThanhVien
         public BaiVietDao dao = new BaiVietDao();
-        public ActionResult Index()
+        public ActionResult Index(int page = 1 , int pagesize = 10)
         {
-            var model = dao.DanhSachBaiViet().ToList();
+            var model = dao.DanhSachBaiViet(page,pagesize);
             return View(model);
         }
         [HttpGet]

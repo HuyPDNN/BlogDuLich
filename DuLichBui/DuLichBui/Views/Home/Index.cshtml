@@ -1,8 +1,9 @@
 ﻿@model DuLichBui.Models.DangNhapThanhVienModel
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var danhsach = (List<Model.EF.BaiViet>)ViewBag.danhsachbaiviet;
+    var danhsach = (PagedList.IPagedList<Model.EF.BaiViet>)ViewBag.danhsachbaiviet;
     var listinfothanhvien = (List<Model.EF.ThanhVien>)ViewBag.listinfothanhvien;
     var dstheloai = (List<Model.EF.TheLoai>)ViewBag.dsTheLoai;
 }
@@ -23,7 +24,10 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-xl-8 py-5 px-md-5">
+                    <h3 class="sidebar-heading">Bài viết mới nhất</h3>
+                    <hr />
                     <div class="row pt-md-4">
+                        
                         @foreach (var item in danhsach)
                         {
                             <div class="col-md-12">
@@ -49,15 +53,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="block-27">
-                                <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
-                                </ul>
+                                    @Html.PagedListPager(danhsach, page => Url.Action("Index", new { page }))
                             </div>
                         </div>
                     </div>
@@ -98,11 +94,11 @@
                                         <div class="avatar">
                                             <img src="~/Anh/@item.AnhDaiDien" />
                                         </div>
-                                        <div class="infouser">
-                                            <p>Thành viên, <span>@item.HoTen</span> </p>
-                                            <p>@Html.ActionLink("Xem Chi Tiết", "ThongTinChiTietThanhVien", new { id = item.MaThanhVien })</p>
-                                            <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
-                                        </div>
+                                            <div class="infouser">
+                                                <p>Thành viên, <span>@item.HoTen</span> </p>
+                                                <p>@Html.ActionLink("Xem Chi Tiết", "ThongTinChiTietThanhVien", new { id = item.MaThanhVien })</p>
+                                                <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
+                                            </div>
                                     }
 
                                 }
@@ -121,7 +117,7 @@
                                         {
                                             <li><a href="#">@item.TenTheLoai<span>(6)</span></a></li>
                                         }
-                                        
+
                                     </ul>
                                 </div>
                                 <div class="sidebar-box ftco-animate">
@@ -219,19 +215,19 @@
                                                     <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">*@
                                                 @Html.TextBoxFor(model => model.Taikhoan, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputName" })
                                             </div>
-                                            <div class="form-group">
-                                                @*<label for="exampleInputPassword1">Mật khẩu</label>
-                                                    <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
-                                                @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
-                                            </div>
-                                            @*<input type="checkbox"> Nhớ mật khẩu*@
-                                            <div class="checkbox">
-                                                <label>
-                                                    @Html.CheckBoxFor(model => model.Nhomatkhau)Nhớ mật khẩu
-                                                </label>
-                                            </div>
-                                            <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
-                                            <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
+                                                <div class="form-group">
+                                                    @*<label for="exampleInputPassword1">Mật khẩu</label>
+                                                        <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
+                                                    @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
+                                                </div>
+                                                @*<input type="checkbox"> Nhớ mật khẩu*@
+                                                <div class="checkbox">
+                                                    <label>
+                                                        @Html.CheckBoxFor(model => model.Nhomatkhau)Nhớ mật khẩu
+                                                    </label>
+                                                </div>
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
                                         }
                                     </div>
                                 </div>

@@ -1,0 +1,82 @@
+﻿@model PagedList.IPagedList<Model.EF.TaiKhoan>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "DanhSachTaiKhoan";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DanhSachTaiKhoan</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Họ Tên</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Ảnh đại diện</th>
+        <th>Ngày đăng kí</th>
+        <th>Tiền lương</th>
+        <th>Tài khoản</th>
+        <th>Mật khẩu</th>
+        <th>Quyền</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnhDaiDien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDangKi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TienLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quyen1.TenQuyen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaTaiKhoan }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaTaiKhoan }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaTaiKhoan })
+            </td>
+        </tr>
+    }
+
+</table>
+<center>
+    @Html.PagedListPager(Model, page => Url.Action("DanhSachTaiKhoan", new { page }))
+</center>
+<p>
+    @Html.ActionLink("Thêm tài khoản", "Create")
+</p>
