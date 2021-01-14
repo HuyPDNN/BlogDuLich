@@ -14,13 +14,13 @@ namespace Model.Dao
         {
             db = new DulichBuiDbContext();
         }
-        public IEnumerable<TheLoai> DSTheLoai()
+        public List<TheLoai> DSTheLoai()
         {
             return db.TheLoai.ToList();
         }
-        public List<LoaiThanhVien> DSLoaiThanhVien()
+        public LoaiThanhVien ViewDetail(string maloai)
         {
-            return db.LoaiThanhVien.ToList();
+            return db.LoaiThanhVien.Find(maloai);
         }
     }
 }

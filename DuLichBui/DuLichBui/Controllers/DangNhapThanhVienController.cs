@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Model.EF;
 
 namespace DuLichBui.Controllers
 {
@@ -56,11 +57,20 @@ namespace DuLichBui.Controllers
             Session[CommonConstants.USER_SESSION] = null;
             return Redirect("/");
         }
-        public ActionResult ThongTinChiTietThanhVien(string mathanhvien)
+        public ActionResult ThongTinChiTietThanhVien(string mathanhvien = "")
         {
-            var thanhvien = new DangNhapThanhVienDao();
-            ViewBag.loaithanhvien = new TheLoaiDao().DSLoaiThanhVien();
-            return View(thanhvien);
+            //var thanhvien = new DangNhapThanhVienDao().ViewDetail(mathanhvien);
+            //ViewBag.loaithanhvien = new TheLoaiDao().ViewDetail(thanhvien.MaLoaiThanhVien);
+            //return View(thanhvien);
+            var db = new DulichBuiDbContext();
+            if (mathanhvien != null)
+            {
+                ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
+                return View(tv);
+            }
+            else
+                return HttpNotFound("không");
+
         }
     }
 }

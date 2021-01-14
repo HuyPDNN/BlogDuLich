@@ -18,6 +18,7 @@ namespace Model.EF
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [StringLength(50)]
         public string MaThanhVien { get; set; }
 

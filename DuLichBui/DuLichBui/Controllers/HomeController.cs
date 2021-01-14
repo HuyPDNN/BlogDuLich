@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Model.Dao;
-
+using Model.EF;
 namespace DuLichBui.Controllers
 {
     public class HomeController : Controller
@@ -34,8 +34,20 @@ namespace DuLichBui.Controllers
             var list = new BaiVietDao().DanhSachBaiViet();
             return View(list);
         }
+        public ActionResult ThongTinChiTietThanhVien(string mathanhvien = "")
+        {
+       
+            var db = new DulichBuiDbContext();
+            if (mathanhvien != null)
+            {
+                ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
+                return View(tv);
+            }
+            else
+                return HttpNotFound("không");
 
-        
+        }
+
 
         //public ActionResult CapNhatThongTiinThanhVien(string mathanhvien)
         //{

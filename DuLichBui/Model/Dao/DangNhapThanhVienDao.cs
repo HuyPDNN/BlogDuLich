@@ -22,9 +22,14 @@ namespace Model.Dao
         {
             return db.ThanhVien.SingleOrDefault(o => o.TaiKhoan == taiKhoan);
         }
-        public ThanhVien ViewDetail(string maThanhVien)
+        //public ThanhVien ViewDetail(string mathanhvien)
+        //{
+        //    return db.ThanhVien.Find(mathanhvien);
+        //}
+        public ThanhVien ViewDetail(string mathanhvien)
         {
-            return db.ThanhVien.Find(maThanhVien);
+            return db.thanhvien.singleordefault(o=> o.mathanhvien == mathanhvien);
+
         }
         //public bool CapNhatThongTinThanhVien(ThanhVien entity)
         //{

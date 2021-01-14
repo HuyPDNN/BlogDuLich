@@ -100,7 +100,7 @@
                                         </div>
                                         <div class="infouser">
                                             <p>Thành viên, <span>@item.HoTen</span> </p>
-                                            <a href="/thong-tin-thanh-vien"><p>Thông tin chi tiết</p></a>
+                                            <p>@Html.ActionLink("Xem Chi Tiết", "ThongTinChiTietThanhVien", new { id = item.MaThanhVien })</p>
                                             <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
                                         </div>
                                     }
