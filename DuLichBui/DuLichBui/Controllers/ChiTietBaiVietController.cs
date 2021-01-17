@@ -11,16 +11,12 @@ namespace DuLichBui.Controllers
     public class ChiTietBaiVietController : Controller
     {
         // GET: Baiviet
-        public ActionResult Index(int? id)
+        public ActionResult Index(long id)
         {
-            ViewBag.ListBL= new BinhLuanDanhGiaDao().ListBL();
-            if (id.HasValue)
-            {
-                var baiviet = new BaiVietDao().Chitiet(id);
-                return View(baiviet);
-            }
-            else
-                return HttpNotFound("khong");
+            ViewBag.ListBL = new BinhLuanDanhGiaDao().ListBL();
+            var baiviet = new BaiVietDao().Chitiet(id);
+            //ViewBag.thanhvien = new ThanhVienDao().chitiet(baiviet.MaThanhVien.Value);
+            return View(baiviet);
 
         }
     }

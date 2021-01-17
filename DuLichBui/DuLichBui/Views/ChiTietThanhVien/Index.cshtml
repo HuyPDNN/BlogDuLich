@@ -1,0 +1,179 @@
+﻿@model Model.EF.ThanhVien
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>ThanhVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiThanhVien.TenLoaiThanhVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiThanhVien.TenLoaiThanhVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiKhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnhDaiDien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnhDaiDien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuocGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuocGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThanhPho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThanhPho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceBookLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceBookLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaBanThan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaBanThan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDangKi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDangKi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongBaiViet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongBaiViet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongLuotDanhGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongLuotDanhGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongLuotXem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongLuotXem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienHoaHong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienHoaHong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaThanhVien }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

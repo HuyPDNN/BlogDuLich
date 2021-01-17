@@ -12,13 +12,17 @@ namespace DuLichBui.Controllers
     public class HomeController : Controller
     {
 
-        public ActionResult Index(int page = 1 , int pagesize = 10)
+        public ActionResult Index(int page = 1, int pagesize = 10)
         {
-            ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet(page,pagesize);
+            DulichBuiDbContext db = new DulichBuiDbContext();
+            ViewBag.danhsachbaiviet = new BaiVietDao().DanhSachBaiViet(page, pagesize);
             ViewBag.listinfothanhvien = new DangNhapThanhVienDao().ListInfoThanhVien();
             ViewBag.dsTheLoai = new TheLoaiDao().DSTheLoai();
+
             return View();
         }
+
+
         public ActionResult ListInfoThanhVien()
         {
             var list = new DangNhapThanhVienDao().ListInfoThanhVien();
@@ -29,25 +33,12 @@ namespace DuLichBui.Controllers
             var list = new TheLoaiDao().DSTheLoai();
             return View(list);
         }
-        public ActionResult DanhSachBaiViet(int page = 1 , int pagesize = 10)
+        public ActionResult DanhSachBaiViet(int page = 1, int pagesize = 10)
         {
-            var list = new BaiVietDao().DanhSachBaiViet(page,pagesize);
+            var list = new BaiVietDao().DanhSachBaiViet(page, pagesize);
             return View(list);
         }
-        public ActionResult ThongTinChiTietThanhVien(int? mathanhvien)
-        {
-
-            var thongtin = new DangNhapThanhVienDao().ViewDetail(mathanhvien.Value);
-            return View(thongtin);
 
 
-        }
-
-
-        //public ActionResult CapNhatThongTiinThanhVien(string mathanhvien)
-        //{
-        //    var thanhvien = new DangNhapThanhVienDao().ViewDetail(mathanhvien);
-        //    return View(thanhvien);
-        //}
     }
 }

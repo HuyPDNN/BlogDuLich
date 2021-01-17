@@ -66,8 +66,11 @@
 
                         <div>
                             <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+                              
+                                @*@{ Html.RenderAction("thanhvien", "Home");}*@
                                 @{
                                     var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+
                                 }
                                 @if (ten == null)
                                 {
@@ -91,18 +94,21 @@
 
                                 }
                                 else
+
                                 {
                                     foreach (var item in listinfothanhvien)
                                     {
                                         <div class="avatar">
                                             <img src="~/Anh/@item.AnhDaiDien" />
                                         </div>
-                                            <div class="infouser">
-                                                <p>Xin chào, <span>@item.HoTen</span> </p>
-                                                <p>@Html.ActionLink("Xem Chi Tiết", "ThongTinChiTietThanhVien", new { id = item.MaThanhVien })</p>
-                                                <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
-                                            </div>
+                                        <div class="infouser">
+                                            <p>Xin chào, <span>@item.HoTen</span> </p>
+                                            <p><a href="@Url.Action("Index","ChiTietThanhVien",new {id = @item.MaThanhVien})">Thông tin chi tiết</a></p>
+                                            <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
+                                        </div>
                                     }
+
+
 
                                 }
                                 <div class="sidebar-box pt-md-4">

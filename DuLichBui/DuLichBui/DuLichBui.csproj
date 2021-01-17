@@ -164,7 +164,6 @@
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TacGiaController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThanhVienController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
@@ -176,6 +175,7 @@
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DangNhapThanhVienController.cs" />
+    <Compile Include="Controllers\ChiTietThanhVienController.cs" />
     <Compile Include="Controllers\TravelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -6241,8 +6241,9 @@
     <Content Include="Views\Shared\_MenuDangNhap.cshtml" />
     <Content Include="Views\DangBaiViet\Index.cshtml" />
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
-    <Content Include="Views\Home\ThongTinChiTietThanhVien.cshtml" />
     <Content Include="Views\ChiTietBaiViet\Index.cshtml" />
+    <Content Include="Views\ChiTietThanhVien\Index.cshtml" />
+    <Content Include="Views\Home\thanhvien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
