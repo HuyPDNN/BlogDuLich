@@ -7,11 +7,19 @@
 
 }
 
-<h2>Index</h2>
-
 <div id="colorlib-main">
     <div id="slideshow-page">
+        <div id="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide"><img src="/Assets/Client/images/slider1.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider2.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider3.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider4.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider5.jpg"></div>
+            </div>
+        </div>
     </div>
+
     <section class="ftco-section ftco-no-pt ftco-no-pb">
         <div class="container">
             <div class="row d-flex">
@@ -68,7 +76,7 @@
                 @if (ten == null)
                 {
                     <div class="marquee">
-                       Mời đăng kí để bình luận bài viết,
+                        Mời đăng kí để bình luận bài viết,
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
                             <marquee width="100%" behavior="alternate">Đăng kí tài khoản</marquee>
                         </button>
@@ -79,7 +87,7 @@
                 {
                     <div class="comment-form-wrap pt-5">
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">Nội dung bình luận</label>
                             <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
@@ -89,6 +97,7 @@
 
                 }
             </div>
+
             <div class="modal fade" id="dialog1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">

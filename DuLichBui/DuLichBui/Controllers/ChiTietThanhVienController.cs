@@ -16,5 +16,6 @@ namespace DuLichBui.Controllers
                 var tacgia = new ThanhVienDao().chitiet(id);
                 return View(tacgia);
         }
+
     }
 }

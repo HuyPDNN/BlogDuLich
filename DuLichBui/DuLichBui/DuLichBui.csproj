@@ -6243,7 +6243,6 @@
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
     <Content Include="Views\ChiTietBaiViet\Index.cshtml" />
     <Content Include="Views\ChiTietThanhVien\Index.cshtml" />
-    <Content Include="Views\Home\thanhvien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
