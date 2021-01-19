@@ -17,6 +17,7 @@ namespace Model.Dao
         }
         public long Insert(BaiViet entity)
         {
+           // var tv = db.ThanhVien.Find(entity.ThanhVien.MaThanhVien);
             db.BaiViet.Add(entity);
             db.SaveChanges();
             return entity.MaBaiViet;

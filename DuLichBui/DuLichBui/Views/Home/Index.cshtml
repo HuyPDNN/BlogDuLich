@@ -7,12 +7,7 @@
     var listinfothanhvien = (List<Model.EF.ThanhVien>)ViewBag.listinfothanhvien;
     var dstheloai = (List<Model.EF.TheLoai>)ViewBag.dsTheLoai;
 }
-<script>
-    var i = 0;
-    function autoincreasesClick() {
-        document.getElementById('inc').value = ++i;
-    }
-</script>
+
 <div id="colorlib-main">
     <div id="slideshow-page">
         <div id="slideshow">
@@ -45,7 +40,6 @@
                                             <p class="meta">
                                                 <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayDang))</span>
                                                 <span><a href="single.html"><i class="icon-folder-o mr-2"></i>@item.TheLoai.TenTheLoai</a></span>
-                                                <span><i class="icon-eye mr-2" id="inc" value="0"></i></span>
                                                 <span><i class="icon-person"></i>@item.ThanhVien.HoTen</span>
                                                 @*<span><i class="icon-comment2 mr-2"></i>@item.ThanhVien.HoTen</span>*@
                                             </p>
