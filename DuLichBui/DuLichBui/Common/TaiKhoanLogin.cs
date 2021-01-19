@@ -8,7 +8,9 @@ namespace DuLichBui.Common
     [Serializable]
     public class TaiKhoanLogin
     {
-            public int TaiKhoanID { set; get; }
-            public string TaiKhoan { set; get; }
+        public int TaiKhoanID { set; get; }
+        public string TaiKhoan { set; get; }
+        public string AnhDaiDien { set; get; }
+        public string HoTen { set; get; }
     }
 }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Model.EF;
 
+
 namespace DuLichBui.Controllers
 {
     public class DangNhapThanhVienController : Controller
@@ -30,6 +31,8 @@ namespace DuLichBui.Controllers
                     var taikhoanSession = new TaiKhoanLogin();
                     taikhoanSession.TaiKhoan = taikhoan.TaiKhoan;
                     taikhoanSession.TaiKhoanID = taikhoan.MaThanhVien;
+                    taikhoanSession.AnhDaiDien = taikhoan.AnhDaiDien;
+                    taikhoanSession.HoTen = taikhoan.HoTen;
                     Session.Add(CommonConstants.USER_SESSION, taikhoanSession);
                     return RedirectToAction("Index", "Home");
                 }

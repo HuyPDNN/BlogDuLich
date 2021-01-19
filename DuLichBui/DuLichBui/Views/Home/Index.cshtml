@@ -75,7 +75,9 @@
                               
                                 @*@{ Html.RenderAction("thanhvien", "Home");}*@
                                 @{
+
                                     var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+
 
                                 }
                                 @if (ten == null)
@@ -100,19 +102,16 @@
 
                                 }
                                 else
-
                                 {
-                                    foreach (var item in listinfothanhvien)
-                                    {
                                         <div class="avatar">
-                                            <img src="~/Anh/@item.AnhDaiDien" />
+                                            <img src="~/Anh/@ten.AnhDaiDien" />
                                         </div>
                                         <div class="infouser">
-                                            <p>Xin chào, <span>@item.HoTen</span> </p>
-                                            <p><a href="@Url.Action("Index","ChiTietThanhVien",new {id = @item.MaThanhVien})">Thông tin chi tiết</a></p>
+                                            <p>Xin chào, <span>@ten.HoTen</span> </p>
+                                            <p><a href="@Url.Action("Index","ChiTietThanhVien",new {id = @ten.TaiKhoanID})">Thông tin chi tiết</a></p>
                                             <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
                                         </div>
-                                    }
+
 
 
 
