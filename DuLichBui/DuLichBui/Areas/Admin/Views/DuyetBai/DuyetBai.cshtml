@@ -1,0 +1,68 @@
+﻿@model Model.EF.BaiViet
+
+@{
+    ViewBag.Title = "DuyetBai";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+    
+<script src="/Assets/Admin/js/controller/userController.js"></script>
+    }
+
+<h2>DuyetBai</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>BaiViet</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaBaiViet)
+
+        <div class="row d-flex">
+            <div class="col-xl-8 py-5 px-md-5">
+                <h3 class="sidebar-heading">@Model.TieuDe</h3>
+                <hr />
+                <div class="row pt-md-4">
+                    <div class="col-md-12">
+                        <div class="blog-entry ftco-animate d-md-flex">
+                            <div class="text text-2 pl-md-4">
+                                <p class="meta">
+                                    <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", @Model.NgayDang))</span>
+                                    <span><a href="#"><i class="icon-folder-o mr-2"></i>@Model.TheLoai.TenTheLoai</a></span>
+                                    <br />
+                                    <span><i class="icon-eye mr-2"></i>@Model.ThanhVien.HoTen</span>
+                                </p>
+                                <img src="~/Anh/@Model.Image" style="width: 500px; height: 300px" />
+                                <p>@Model.NoiDung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <a href="#" class="btn-active" data-id="@Model.MaBaiViet">@(Model.TrangThai ? "Hủy đăng" : "Duyệt bài")</a>
+            @*@Html.LabelFor(model => model.TrangThai, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="dropdown">
+                    @Html.EditorFor(model => model.TrangThai)
+                    @Html.ValidationMessageFor(model => model.TrangThai, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        </div>
+        <div>
+            @Html.ActionLink("Trở về", "Index","BaiViet")
+        </div>
+        @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Trở về" onclick="location.href=(@Url.Action("Index","BaiViet"))" class="btn btn-default" />
+            </div>
+        </div>*@
+    </div>
+}
+
+

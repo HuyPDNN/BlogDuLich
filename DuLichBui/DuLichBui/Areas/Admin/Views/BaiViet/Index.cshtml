@@ -64,11 +64,11 @@
                 @Html.DisplayFor(modelItem => item.TongLuotXem)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TrangThai)
+               @(item.TrangThai ? "Đã duyệt" : "Chờ Phê duyệt")
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaBaiViet }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaBaiViet }) |
+         
+              <a href="@Url.Action("DuyetBai","DuyetBai", new {id =@item.MaBaiViet })">Xem chi tiết</a>
                 @Html.ActionLink("Delete", "Delete", new { id = item.MaBaiViet })
             </td>
         </tr>

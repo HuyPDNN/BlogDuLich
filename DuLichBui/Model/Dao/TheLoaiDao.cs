@@ -18,9 +18,6 @@ namespace Model.Dao
         {
             return db.TheLoai.ToList();
         }
-        public LoaiThanhVien ViewDetail(string maloai)
-        {
-            return db.LoaiThanhVien.Find(maloai);
-        }
+
     }
 }

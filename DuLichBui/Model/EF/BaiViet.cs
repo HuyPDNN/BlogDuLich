@@ -38,7 +38,7 @@ namespace Model.EF
 
         public int? TongLuotXem { get; set; }
 
-        public bool? TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
         public virtual ThanhVien ThanhVien { get; set; }
 
