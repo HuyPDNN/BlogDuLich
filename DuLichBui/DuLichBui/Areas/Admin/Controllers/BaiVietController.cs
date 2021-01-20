@@ -10,7 +10,7 @@ namespace DuLichBui.Areas.Admin.Controllers
 {
     public class BaiVietController : Controller
     {
-        public BaiVietDao dao = new BaiVietDao();
+        public DuyetBaiDao dao = new DuyetBaiDao();
         // GET: Admin/BaiViet
         public ActionResult Index(int page = 1, int pagesize = 10)
         {

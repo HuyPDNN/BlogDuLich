@@ -10,36 +10,37 @@ namespace DuLichBui.Controllers
 {
     public class DangBaiVietController : Controller
     {
-  
+
         // GET: ThanhVien
         public BaiVietDao dao = new BaiVietDao();
-        public ActionResult Index(int page = 1 , int pagesize = 10)
+        public DulichBuiDbContext db = new DulichBuiDbContext();
+        public ActionResult Index(int page = 1, int pagesize = 10)
         {
-            var model = dao.DanhSachBaiViet(page,pagesize);
+            var model = dao.DanhSachBaiViet(page, pagesize);
             return View(model);
         }
         public void SetViewBag(long? selectedID = null)
         {
             var dao = new TheLoaiDao();
-            ViewBag.MaTheLoai = new SelectList(dao.DSTheLoai(),"MaTheLoai","TenTheLoai", selectedID);
+            ViewBag.MaTheLoai = new SelectList(dao.DSTheLoai(), "MaTheLoai", "TenTheLoai", selectedID);
         }
         [HttpGet]
-        public ActionResult ThemBaiViet(long id)
+        public ActionResult ThemBaiViet()
         {
-            //var baiviet = new BaiVietDao();
-            //var thanhvien = baiviet.Chitiet(id);
-            SetViewBag(/*thanhvien.MaTheLoai*/);
+
+            List<TheLoai> listtheloai = db.TheLoai.ToList();
+            ViewBag.listtheloai = new SelectList(listtheloai, "MaTheLoai", "TenTheLoai");
             return View();
         }
         [HttpPost]
         public ActionResult ThemBaiViet(BaiViet model)
         {
-           
+
 
             if (ModelState.IsValid)
             {
                 long mabaiviet = dao.Insert(model);
-                if(mabaiviet > 0)
+                if (mabaiviet > 0)
                 {
                     return RedirectToAction("Index", "Home");
                 }
@@ -48,7 +49,6 @@ namespace DuLichBui.Controllers
                     ModelState.AddModelError("", "Thêm bài viêt không thành công");
                 }
             }
-            SetViewBag(/*model.MaTheLoai*/);
             return View("ThemBaiViet");
 
         }

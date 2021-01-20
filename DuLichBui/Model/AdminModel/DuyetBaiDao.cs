@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Model.AdminModel
 {
@@ -26,6 +28,10 @@ namespace Model.AdminModel
             db.SaveChanges();
             return !baiviet.TrangThai;
         }
+        public IEnumerable<BaiViet> DanhSachBaiViet(int page, int pagesize)
+        {
+            return db.BaiViet.OrderByDescending(o => o.NgayDang).ToPagedList(page, pagesize);
+        }
         //public bool DuyetBaiViet(BaiViet entity)
         //{
         //    try
@@ -38,7 +44,7 @@ namespace Model.AdminModel
         //    {
         //        return false;
         //    }
-            
+
         //}
     }
 }

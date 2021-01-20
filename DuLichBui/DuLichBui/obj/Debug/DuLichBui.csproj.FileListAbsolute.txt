@@ -154,3 +154,5 @@ E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\Microsoft.AI.Web.xml
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\obj\Debug\DuLichBui.csprojResolveAssemblyReference.cache
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\obj\Debug\DuLichBui.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\obj\Debug\DuLichBui.pdb
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.dll
+C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.pdb
