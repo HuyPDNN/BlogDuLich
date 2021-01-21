@@ -1932,7 +1932,6 @@
     <Content Include="Assets\Client\images\person_4.jpg" />
     <Content Include="Assets\Client\js\aos.js" />
     <Content Include="Assets\Client\js\bootstrap.min.js" />
-    <Content Include="Assets\Client\js\Dem\TongLuotXem.js" />
     <Content Include="Assets\Client\js\google-map.js" />
     <Content Include="Assets\Client\js\jquery-3.2.1.min.js" />
     <Content Include="Assets\Client\js\jquery-migrate-3.0.1.min.js" />
@@ -3092,7 +3091,6 @@
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
     <Content Include="Views\ChiTietBaiViet\Index.cshtml" />
     <Content Include="Views\ChiTietThanhVien\Index.cshtml" />
-    <Content Include="Views\Home\DEM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

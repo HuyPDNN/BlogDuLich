@@ -97,9 +97,19 @@
                                 }
                                 else
                                 {
+                                    if(ten.AnhDaiDien == null)
+                                    {
                                         <div class="avatar">
-                                            <img src="~/Anh/@ten.AnhDaiDien" />
+                                            <img src="~/Anh/images/Anh/avatar.jpg" class="tron" />
                                         </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="avatar">
+                                            <img src="@ten.AnhDaiDien" />
+                                        </div>
+                                    }
+
                                         <div class="infouser">
                                             <p>Xin chào, <span>@ten.HoTen</span> </p>
                                             <p><a href="@Url.Action("Index","ChiTietThanhVien",new {id = @ten.TaiKhoanID})">Thông tin chi tiết</a></p>
