@@ -11,9 +11,9 @@ namespace DuLichBui.Controllers
     public class ChiTietBaiVietController : Controller
     {
         // GET: Baiviet
-        public ActionResult Index(long id)
+        public ActionResult Index(int id)
         {
-            ViewBag.ListBL = new BinhLuanDanhGiaDao().ListBL();
+            ViewBag.ListBL = new BinhLuanDanhGiaDao().ListBL(id);
             var baiviet = new BaiVietDao().Chitiet(id);
             //ViewBag.thanhvien = new ThanhVienDao().chitiet(baiviet.MaThanhVien.Value);
             return View(baiviet);

@@ -36,14 +36,15 @@
                                         <br />
                                         <span><i class="icon-eye mr-2"></i>@Model.TongLuotXem</span>
                                     </p>
-                                    <img src="~/Anh/@Model.Image" style="width: 500px; height: 300px" />
-                                    <p>@Model.NoiDung</p>
+                                    <img src="~/Anh/images/Anh/@Model.Image" style="width: 500px; height: 300px" />
+                                    @Model.NoiDung
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="pt-5 mt-5">
                 @{
                     var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];

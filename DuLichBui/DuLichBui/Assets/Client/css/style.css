@@ -9577,3 +9577,10 @@ bg-light #day {
     color: blueviolet;
     padding: 0 0 0 5px;
 }
+#note {
+    border: 1px solid #cccccc;
+    width: 100%;
+    height: 300px;
+    margin: 5px 0;
+    padding: 3px;
+}

@@ -189,13 +189,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Anh\036726eebb2c05364d92e8af4c8bcc02.png" />
-    <Content Include="Anh\avatar.jpg" />
-    <Content Include="Anh\avatar3.jpg" />
-    <Content Include="Anh\hoc-nau-bun-bo-hue.jpg" />
-    <Content Include="Anh\hue-kich-cau-du-lich-c.jpg" />
-    <Content Include="Anh\tfd_200910035403_147221.jpg" />
-    <Content Include="Anh\avatar2.jpg" />
+    <Content Include="Anhimages\anh\cuocthianh-hue.jpg" />
+    <Content Include="Anh\images\Anh\036726eebb2c05364d92e8af4c8bcc02.png" />
+    <Content Include="Anh\images\Anh\avatar.jpg" />
+    <Content Include="Anh\images\Anh\avatar3.jpg" />
+    <Content Include="Anh\images\Anh\hoc-nau-bun-bo-hue.jpg" />
+    <Content Include="Anh\images\Anh\hue-kich-cau-du-lich-c.jpg" />
+    <Content Include="Anh\images\Anh\cuocthianh-hue.jpg" />
+    <Content Include="Anh\images\Anh\tfd_200910035403_147221.jpg" />
+    <Content Include="Anh\images\Anh\avatar2.jpg" />
+    <Content Include="Anh\_thumbs\Images\Anh\cuocthianh-hue.jpg" />
+    <Content Include="Anh_thumbs\Images\anh\cuocthianh-hue.jpg" />
     <Content Include="Assets\Admin\css\sb-admin-2.css" />
     <Content Include="Assets\Admin\css\sb-admin-2.min.css" />
     <Content Include="Assets\Admin\img\undraw_posting_photo.svg" />
@@ -1928,6 +1932,7 @@
     <Content Include="Assets\Client\images\person_4.jpg" />
     <Content Include="Assets\Client\js\aos.js" />
     <Content Include="Assets\Client\js\bootstrap.min.js" />
+    <Content Include="Assets\Client\js\Dem\TongLuotXem.js" />
     <Content Include="Assets\Client\js\google-map.js" />
     <Content Include="Assets\Client\js\jquery-3.2.1.min.js" />
     <Content Include="Assets\Client\js\jquery-migrate-3.0.1.min.js" />
@@ -3087,6 +3092,7 @@
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
     <Content Include="Views\ChiTietBaiViet\Index.cshtml" />
     <Content Include="Views\ChiTietThanhVien\Index.cshtml" />
+    <Content Include="Views\Home\DEM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

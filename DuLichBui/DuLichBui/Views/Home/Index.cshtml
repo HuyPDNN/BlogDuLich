@@ -33,7 +33,7 @@
                             //var url = "/chi-tiet-bai-viet/" + item.MaBaiViet;
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(/Anh/@item.Image);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url(@item.Image);"></a>
                                     <div class="text text-2 pl-md-4">
                                         <h3 class="mb-2" onclick="autoincreasesClick()"><a href="@Url.Action("Index","ChiTietBaiViet",new {id = @item.MaBaiViet})">@item.TieuDe</a></h3>
                                         <div class="meta-wrap">

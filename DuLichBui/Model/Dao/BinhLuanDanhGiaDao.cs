@@ -21,9 +21,10 @@ namespace Model.Dao
             db.SaveChanges();
             return bl.MaBinhLuan;
         }
-        public List<BinhLuanBaiViet> ListBL()
+        public List<BinhLuanBaiViet> ListBL(int id)
         {
-            return db.BinhLuanBaiViet.OrderByDescending(o => o.NgayBinhLuan).ToList(); ;
+            var baiviet = db.BaiViet.Find(id);
+            return db.BinhLuanBaiViet.Where(x => x.MaBaiViet == baiviet.MaBaiViet).ToList();
         }
     }
 }
