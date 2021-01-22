@@ -31,6 +31,20 @@ namespace Model.Dao
             return db.ThanhVien.SingleOrDefault(o=> o.MaThanhVien == mathanhvien);
 
         }
+        public long DangKiThanhVien(ThanhVien entity)
+        {
+            db.ThanhVien.Add(entity);
+            db.SaveChanges();
+            return entity.MaThanhVien;
+        }
+        public bool CheckTaiKhoan(string taikhoan)
+        {
+            return db.ThanhVien.Count(x => x.TaiKhoan == taikhoan) > 0;
+        }
+        public bool CheckEmail(string email)
+        {
+            return db.ThanhVien.Count(x => x.Email == email) > 0;
+        }
         //public bool CapNhatThongTinThanhVien(ThanhVien entity)
         //{
         //    try

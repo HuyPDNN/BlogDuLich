@@ -66,14 +66,56 @@ namespace DuLichBui.Controllers
             //ViewBag.loaithanhvien = new TheLoaiDao().ViewDetail(thanhvien.MaLoaiThanhVien);
             //return View(thanhvien);
             var db = new DulichBuiDbContext();
-            if (mathanhvien.HasValue )
-            {
+           
                 ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
                 return View(tv);
-            }
-            else
-                return HttpNotFound("không");
+            
 
+        }
+        [HttpGet]
+        public ActionResult DangKiThanhVien()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangKiThanhVien(DangKiThanhVienModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new DangNhapThanhVienDao();
+                if (dao.CheckTaiKhoan(model.TaiKhoan))
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
+                }
+                else if (dao.CheckEmail(model.Email))
+                {
+                    ModelState.AddModelError("", "Email đã tồn tại");
+                }
+                else
+                {
+                    var taikhoan = new ThanhVien();
+                    taikhoan.MatKhau = model.MatKhau;
+                    taikhoan.HoTen = model.HoTen;
+                    taikhoan.Email = model.Email;
+                    taikhoan.SDT = model.SDT;
+                    taikhoan.DiaChi = model.DiaChi;
+                    taikhoan.NgayDangKi = DateTime.Now;
+                    taikhoan.TrangThai = true;
+
+                    var result = dao.DangKiThanhVien(taikhoan);
+                    if (result > 0)
+                    {
+                        ViewBag.Success = "Đăng ký thành công";
+                        model = new DangKiThanhVienModel();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Đăng ký không thành công.");
+                    }
+
+                }
+            }
+            return View(model);
         }
     }
 }
