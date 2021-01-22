@@ -1,6 +1,6 @@
-﻿var baiviet = {
+﻿var dem = {
     init: function () {
-        baiviet.registerEvents();
+        dem.registerEvents();
     },
     registerEvents: function () {
         $('.btn-active').off('click').on('click', function (e) {
@@ -8,21 +8,17 @@
             var btn = $(this);
             var id = btn.data('id');
             $.ajax({
-                url: ("/Admin/DuyetBai/DuyetBaiViet"),
+                url: ("/Admin/BaiViet/DuyetBai"),
                 data: { id: id },
                 dataType: "json",
                 type: "POST",
                 success: function (response) {
                     console.log(response);
-                    if (response.status == true) {
-                        btn.text('Hủy đăng');
-                    }
-                    else {
-                        btn.text('Duyệt bài');
-                    }
+
+                    dem.view++;
                 }
             });
         });
     }
 }
-baiviet.init();
+dem.init();

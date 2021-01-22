@@ -21,6 +21,15 @@ namespace DuLichBui.Areas.Admin.Controllers
             var bv = new DuyetBaiDao().Chitiet(id);
             return View(bv);
         }
+        [HttpPost]
+        public JsonResult DuyetBaiViet(int id)
+        {
+            var result = new DuyetBaiDao().duyetBaiViet(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
         //[HttpPost]
         //public ActionResult DuyetBai(BaiViet bv)
         //{
@@ -39,7 +48,7 @@ namespace DuLichBui.Areas.Admin.Controllers
         //    }
         //    return View("Index");
         //}
-        
-        
+
+
     }
 }
