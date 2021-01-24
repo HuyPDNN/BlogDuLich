@@ -69,8 +69,6 @@ namespace DuLichBui.Controllers
            
                 ThanhVien tv = (from thanhvien in db.ThanhVien where thanhvien.MaThanhVien == mathanhvien select thanhvien).SingleOrDefault();
                 return View(tv);
-            
-
         }
         [HttpGet]
         public ActionResult DangKiThanhVien()
@@ -106,7 +104,8 @@ namespace DuLichBui.Controllers
                     if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
-                        model = new DangKiThanhVienModel();
+                        //model = new DangKiThanhVienModel();
+                        return RedirectToAction("Index", "Home");
                     }
                     else
                     {
