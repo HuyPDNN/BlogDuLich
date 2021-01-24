@@ -1,4 +1,5 @@
 ﻿@model DuLichBui.Models.DangNhapThanhVienModel
+        
 @using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
@@ -35,7 +36,7 @@
                                 <div class="blog-entry ftco-animate d-md-flex">
                                     <a href="single.html" class="img img-2" style="background-image: url(@item.Image);"></a>
                                     <div class="text text-2 pl-md-4">
-                                        <h3 class="mb-2" onclick="autoincreasesClick()"><a href="@Url.Action("Index","ChiTietBaiViet",new {id = @item.MaBaiViet})">@item.TieuDe</a></h3>
+                                        <h3 class="mb-2" onclick="autoincreasesClick()"><a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })">@item.TieuDe</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayDang))</span>
@@ -46,7 +47,7 @@
                                         </div>
                                         <p class="mb-4">@item.MieuTa</p>
                                         @*@Html.ActionLink("Đọc thêm","Index","ChiTietBaiViet",new { id = @item.MaBaiViet})*@
-                                        <a href="@Url.Action("Index","ChiTietBaiViet",new {id = @item.MaBaiViet})">Đọc Thêm ></a>
+                                        <a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })">Đọc Thêm ></a>
                                         @*<p><a href="#" class="btn-custom">Đọc thêm <span class="ion-ios-arrow-forward"></span></a></p>*@
                                     </div>
                                 </div>
@@ -97,7 +98,7 @@
                                 }
                                 else
                                 {
-                                    if(ten.AnhDaiDien == null)
+                                    if (ten.AnhDaiDien == null)
                                     {
                                         <div class="avatar">
                                             <img src="~/Anh/images/Anh/avatar.jpg" class="tron" />
@@ -112,7 +113,7 @@
 
                                         <div class="infouser">
                                             <p>Xin chào, <span>@ten.HoTen</span> </p>
-                                            <p><a href="@Url.Action("Index","ChiTietThanhVien",new {id = @ten.TaiKhoanID})">Thông tin chi tiết</a></p>
+                                            <p><a href="@Url.Action("Index", "ChiTietThanhVien", new { id = @ten.TaiKhoanID })">Thông tin chi tiết</a></p>
                                             <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
                                         </div>
 
@@ -260,30 +261,7 @@
                                 <div class="modal-body">
                                     <div class="column" id="main">
                                         <h1>Đăng kí tài khoản </h1>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Email</label>
-                                                <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Email.....">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Số điện thoại</label>
-                                                <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Số điện thoại.....">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputName">Tài khoản</label>
-                                                <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Mật khẩu</label>
-                                                <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
-                                                <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Nhập lại mật khẩu.....">
-                                            </div>
-
-                                            <input type="submit" class="btn btn-primary-user" value="Đăng kí" />
-                                        </form>
+                                       @{Html.RenderAction("DangKiThanhVien", "DangNhapThanhVien");}
                                     </div>
                                 </div>
                             </div>
