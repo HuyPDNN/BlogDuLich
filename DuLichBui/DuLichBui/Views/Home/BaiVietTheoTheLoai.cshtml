@@ -1,0 +1,293 @@
+﻿@model IEnumerable<Model.EF.BaiViet>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhVien.TaiKhoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MieuTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongLuotXem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhVien.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheLoai.TenTheLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MieuTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongLuotXem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaBaiViet }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaBaiViet }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaBaiViet })
+        </td>
+    </tr>
+}
+
+</table>*@
+
+<div id="colorlib-main">
+    <div id="slideshow-page">
+        <div id="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide"><img src="/Assets/Client/images/slider1.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider2.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider3.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider4.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider5.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-xl-8 py-5 px-md-5">
+                    <h3 class="sidebar-heading">Bài viết mới nhất</h3>
+                    <hr />
+                    <div class="row pt-md-4">
+
+                        @foreach (var item in danhsach)
+                        {
+                            //var url = "/chi-tiet-bai-viet/" + item.MaBaiViet;
+                            <div class="col-md-12">
+                                <div class="blog-entry ftco-animate d-md-flex">
+                                    <a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })" class="img img-2" style="background-image: url(@item.Image);"></a>
+                                    <div class="text text-2 pl-md-4">
+                                        <h3 class="mb-2" onclick="autoincreasesClick()"><a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })">@item.TieuDe</a></h3>
+                                        <div class="meta-wrap">
+                                            <p class="meta">
+                                                <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayDang))</span>
+                                                <span><a href="#"><i class="icon-folder-o mr-2"></i>@item.TheLoai.TenTheLoai</a></span>
+                                                <span><i class="icon-person"></i>@item.ThanhVien.HoTen</span>
+                                                @*<span><i class="icon-comment2 mr-2"></i>@item.ThanhVien.HoTen</span>*@
+                                            </p>
+                                        </div>
+                                        <p class="mb-4">@item.MieuTa</p>
+                                        @*@Html.ActionLink("Đọc thêm","Index","ChiTietBaiViet",new { id = @item.MaBaiViet})*@
+                                        <a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })">Đọc Thêm ></a>
+                                        @*<p><a href="#" class="btn-custom">Đọc thêm <span class="ion-ios-arrow-forward"></span></a></p>*@
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="block-27">
+                                @Html.PagedListPager(danhsach, page => Url.Action("Index", new { page }))
+                            </div>
+                        </div>
+                    </div>
+
+                    @section Listinforight
+                    {
+
+                        <div>
+                            <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+
+                                @*@{ Html.RenderAction("thanhvien", "Home");}*@
+                                @{
+
+                                    var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+
+
+                                }
+                                @if (ten == null)
+                                {
+                                    <div class="set-account">
+                                        <div>
+                                            <h5>Đăng kí chia sẻ bài viết nhận hoa hồng</h5>
+                                            <hr />
+                                        </div>
+                                        <div class="marquee">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
+                                                <marquee width="100%" behavior="alternate">Đăng kí</marquee>
+                                            </button>
+
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-primary-login" data-toggle="modal" data-target="#exampleModal">
+                                                Đăng nhập
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    if (ten.AnhDaiDien == null)
+                                    {
+                                        <div class="avatar">
+                                            <img src="~/Anh/images/Anh/avatar.jpg" class="tron" />
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="avatar">
+                                            <img src="@ten.AnhDaiDien" />
+                                        </div>
+                                    }
+
+                                    <div class="infouser">
+                                        <p>Xin chào, <span>@ten.HoTen</span> </p>
+                                        <p><a href="@Url.Action("Index", "ChiTietThanhVien", new { id = @ten.TaiKhoanID })">Thông tin chi tiết</a></p>
+                                        <a href="@Url.Action("Logout", "DangNhapThanhVien")">Đăng xuất</a>
+                                    </div>
+
+
+
+
+                                }
+                                <div class="sidebar-box pt-md-4">
+                                    <form action="#" class="search-form">
+                                        <div class="form-group">
+                                            <span class="icon icon-search"></span>
+                                            <input type="text" class="form-control" placeholder="Bạn muốn tìm...?">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="sidebar-box ftco-animate">
+                                    <h3 class="sidebar-heading">Thể loại</h3>
+                                    <ul class="categories">
+                                        @foreach (var item in dstheloai)
+                                        {
+                                            <li><a href="">@item.TenTheLoai<span>(6)</span></a></li>
+                                        }
+
+                                    </ul>
+                                </div>
+                                <div class="sidebar-box ftco-animate">
+                                    <h3 class="sidebar-heading">Bài viết nỗi bật</h3>
+                                    @{ Html.RenderAction("BaiVietNoiBat", "Home");}
+                                </div>
+                                <div class="sidebar-box subs-wrap img py-4" style="background-image: url(/Assets/client/images/bg_1.jpg);">
+                                    <div class="overlay"></div>
+                                    <h3 class="mb-4 sidebar-heading">Bản tin</h3>
+                                    <p class="mb-4"> Núi non đây hùng vĩ, địa danh nổi tiếng.</p>
+                                    <form action="#" class="subscribe-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Địa chỉ Email">
+                                            <input type="submit" value="Gửi" class="mt-2 btn btn-white submit">
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="sidebar-box ftco-animate">
+                                    <h3 class="sidebar-heading"></h3>
+                                    <p>Tham gia khám phá những địa điểm du lịch, hành trình khám phá thiên nhiên phong phú trên mọi miền đất nước và cảm nhận sâu sắc về đời sống- văn hóa bản địa.</p>
+                                </div>
+                                <script src="https://lichngaytot.com/Content/Js/Libs/jquery-3.4.1.min.js"></script>
+                                <script src="https://lichngaytot.com/Content/Js/Libs/jquery-ui.min.js"></script>
+                                <script src="https://lichngaytot.com/Content/Js/Widget/widgetlichthang.js"></script>
+
+                            </div>
+                        </div>
+                    }
+
+                    <!-- Form Đăng Nhập -->
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="column" id="main">
+                                        <h1>Đăng nhập </h1>
+
+                                        @using (Html.BeginForm("DangNhap", "DangNhapThanhVien", FormMethod.Post))
+                                        {
+                                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @*<label for="exampleInputName">Tài khoản</label>
+                                                    <input type="name" class="input-user" id="exampleInputName" placeholder="Tài Khoản.....">*@
+                                                @Html.TextBoxFor(model => model.Taikhoan, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputName" })
+                                            </div>
+                                            <div class="form-group">
+                                                @*<label for="exampleInputPassword1">Mật khẩu</label>
+                                                    <input type="password" class="input-user" id="exampleInputPassword1" placeholder="Mật khẩu.....">*@
+                                                @Html.PasswordFor(model => model.Matkhau, new { @class = "input-user", @autofocus = "autofocus", @id = "exampleInputPassword1" })
+                                            </div>
+                                                @*<input type="checkbox"> Nhớ mật khẩu*@
+                                                <div class="checkbox">
+                                                    <label>
+                                                        @Html.CheckBoxFor(model => model.Nhomatkhau)Nhớ mật khẩu
+                                                    </label>
+                                                </div>
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập" />
+                                                <input type="submit" class="btn btn-primary-user" value="Đăng nhập với Facebook" />
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Đăng Ký -->
+                    <div class="modal fade" id="dialog1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="column" id="main">
+                                        <h1>Đăng kí tài khoản </h1>
+                                        @{Html.RenderAction("DangKiThanhVien", "DangNhapThanhVien");}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
