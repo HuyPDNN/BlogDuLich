@@ -1,0 +1,20 @@
+﻿@model PagedList.IPagedList<Model.EF.BaiViet>
+@using PagedList.Mvc;
+@foreach (var item in Model)
+{
+    <div class="block-21 mb-4 d-flex">
+        <a class="blog-img mr-4" style="background-image: url(@item.Image);"></a>
+        <div class="text">
+            <h3 class="heading"><a href="@Url.Action("Index", "ChiTietBaiViet", new { id = @item.MaBaiViet })">@item.TieuDe</a></h3>
+            <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayDang))</a></div>
+                <span><a href="#"><i class="icon-folder-o mr-2"></i>@item.TheLoai.TenTheLoai</a></span>
+                <div><a href="#"><span class="icon-chat"></span>@item.ThanhVien.HoTen</a></div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
