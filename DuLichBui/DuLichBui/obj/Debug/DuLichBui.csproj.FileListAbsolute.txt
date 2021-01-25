@@ -156,3 +156,5 @@ E:\DATN\BlogDuLich\DuLichBui\DuLichBui\obj\Debug\DuLichBui.dll
 E:\DATN\BlogDuLich\DuLichBui\DuLichBui\obj\Debug\DuLichBui.pdb
 C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.dll
 C:\Users\Nguyen Van Duy\Desktop\Đồ án tốt nghiệp\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.pdb
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.dll
+E:\DATN\BlogDuLich\DuLichBui\DuLichBui\bin\CKFinder.pdb

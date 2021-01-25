@@ -34,7 +34,7 @@ namespace DuLichBui.Controllers
                     taikhoanSession.AnhDaiDien = taikhoan.AnhDaiDien;
                     taikhoanSession.HoTen = taikhoan.HoTen;
                     Session.Add(CommonConstants.USER_SESSION, taikhoanSession);
-                    return RedirectToAction("Index", "Home");
+                    return Redirect("/");
                 }
                 else if (result == 0)
                 {
@@ -53,7 +53,7 @@ namespace DuLichBui.Controllers
                     ModelState.AddModelError("", "Đăng nhập không đúng");
                 }
             }
-            return View("Index");
+            return View(model);
         }
         public ActionResult Logout()
         {

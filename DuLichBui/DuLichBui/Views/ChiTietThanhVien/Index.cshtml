@@ -183,7 +183,8 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Chỉnh sửa">
+                    @*<input type="button" src="@Url.Action("CapNhatThongTinThanhVien","ChiTietThanhVien",new { id = Model.MaThanhVien})" class="profile-edit-btn" name="btnAddMore" value="Chỉnh sửa">*@
+                    <a href="@Url.Action("CapNhatThongTinThanhVien", "ChiTietThanhVien", new { id = Model.MaThanhVien })">cập nhật</a>
                 </div>
             </div>
             <div class="row">

@@ -1,0 +1,83 @@
+﻿@model Model.EF.DanhGiaBaiViet
+@section jsFooter{
+    <script>
+                    $(document).ready(function () {
+                        $("#AjaxPost").click(function () {
+                            $("#content").html("<b>Please Wait...</b>");
+
+                            var dataObject = {
+                                DanhGiaSao: $("#DanhGiaSao").val(),
+                                
+                            };
+
+                            $.ajax({
+                                url: "@Url.Action("DanhGiaBaiViet", "ChiTietBaiViet")",
+                                type: "POST",
+                                data: dataObject,
+                                dataType: "json",
+                                success: function (data) {
+                                    if (data.toString() == "Successfully Saved!") {
+                                        $("#DanhGiaSao").val('');
+                                        $("#content").html("<div class='success'>"+data+"</div>");
+                                    }   
+                                    else {
+                                        $("#content").html("<div class='failed'>" + data + "</div>");
+                                    }
+                                },
+                                error: function () {
+                                    $("#content").html("<div class='failed'>Error! Please try again</div>");
+                                }
+                            });
+
+                        });
+                    });
+</script>
+
+    
+    }
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>DanhGiaBaiViet</h4>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaThanhVien, "MaThanhVien", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaThanhVien", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ThanhVien.HoTen, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayDanhGia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgayDanhGia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NgayDanhGia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DanhGiaSao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DanhGiaSao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DanhGiaSao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="save" class="btn btn-default" id="AjaxPost"/>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

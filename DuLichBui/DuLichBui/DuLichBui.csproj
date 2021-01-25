@@ -3087,7 +3087,6 @@
     <Content Include="Areas\Admin\Views\ThanhVien\Index.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\DangNhapThanhVien\Index.cshtml" />
     <Content Include="Views\Shared\_MenuDangNhap.cshtml" />
     <Content Include="Views\DangBaiViet\Index.cshtml" />
     <Content Include="Views\DangBaiViet\ThemBaiViet.cshtml" />
@@ -3096,6 +3095,7 @@
     <Content Include="Views\DangNhapThanhVien\ThongTinChiTietThanhVien.cshtml" />
     <Content Include="Views\BinhLuanDanhGia\ThemBL.cshtml" />
     <Content Include="Views\DangNhapThanhVien\DangKiThanhVien.cshtml" />
+    <Content Include="Views\ChiTietThanhVien\CapNhatThongTinThanhVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

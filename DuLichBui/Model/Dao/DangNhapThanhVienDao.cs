@@ -45,29 +45,7 @@ namespace Model.Dao
         {
             return db.ThanhVien.Count(x => x.Email == email) > 0;
         }
-        //public bool CapNhatThongTinThanhVien(ThanhVien entity)
-        //{
-        //    try
-        //    {
-        //        var user = db.ThanhVien.Find(entity.MaThanhVien);
-        //        user.HoTen = entity.HoTen;
-        //        user.GioiTinh = entity.GioiTinh;
-        //        user.NgaySinh = entity.NgaySinh;
-        //        user.SDT = entity.SDT;
-        //        user.DiaChi = entity.DiaChi;
-        //        user.ThanhPho = entity.ThanhPho;
-        //        user.QuocGia = entity.QuocGia;
-        //        user.MoTaBanThan = entity.MoTaBanThan;
-        //        user.MatKhau = entity.MatKhau;
-        //        user.FaceBookLink = entity.FaceBookLink;
-        //        user.AnhDaiDien = entity.AnhDaiDien;
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
+        
         public int DangNhapThanhVien(string taikhoan, string matkhau)
         {
             var result = db.ThanhVien.SingleOrDefault(o => o.TaiKhoan == taikhoan);

@@ -85,6 +85,6 @@ namespace Model.EF
                 .HasPrecision(18, 0);
         }
 
-        public System.Data.Entity.DbSet<DuLichBui.Models.DangKiThanhVienModel> DangKiThanhVienModels { get; set; }
+        //public System.Data.Entity.DbSet<DuLichBui.Models.DangKiThanhVienModel> DangKiThanhVienModels { get; set; }
     }
 }
