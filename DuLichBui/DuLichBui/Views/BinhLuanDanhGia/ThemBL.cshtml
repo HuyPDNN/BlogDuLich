@@ -1,7 +1,7 @@
 ﻿@model Model.EF.BinhLuanBaiViet
 
 @{ 
-    var thanhvien = (Model.EF.BaiViet)ViewBag.baiviet;
+    var bv = (Model.EF.BaiViet)ViewBag.baiviet;
     var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
 }
 
@@ -10,10 +10,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>BinhLuanBaiViet</h4>
+        <h4>Bình luận bài viết</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.MaBaiViet, "Mã bài viết", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => thanhvien.MaBaiViet, new { htmlAttributes = new { @class = "form-control" } })
@@ -27,18 +27,11 @@
                 @Html.EditorFor(model => ten.HoTen, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MaThanhVien, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
+
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NgayBinhLuan, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NgayBinhLuan, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NgayBinhLuan, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NoiDungBinhLuan, htmlAttributes: new { @class = "control-label col-md-2" })
+            Nôi dung bình luận
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NoiDungBinhLuan, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NoiDungBinhLuan, "", new { @class = "text-danger" })
@@ -47,7 +40,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Bình luận" class="btn btn-default" />
+                <input type="submit" value="Bình luận"  onclick="location.href='@Url.Action("Index","ChiTietBaiViet", new { id = bv.MaBaiViet })'" class="btn btn-default" />
             </div>
         </div>
     </div>

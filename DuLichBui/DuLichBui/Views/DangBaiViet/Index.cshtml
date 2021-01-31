@@ -1,7 +1,15 @@
-﻿@model IEnumerable<Model.EF.BaiViet>
+﻿@model PagedList.IPagedList<Model.EF.BaiViet>
+@using PagedList.Mvc
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+
+    var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
+
+
 }
 <style type="text/css">
     #colorlib-main input[type=button] {
@@ -27,25 +35,25 @@
                     <table class="table">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.MaBaiViet)
+                                Mã bài viết
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.ThanhVien.HoTen)
+                                Họ tên
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+                                Thể loại
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.TieuDe)
+                                Tiêu đề
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.NgayDang)
+                                Ngày đăng
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.TongLuotXem)
+                                Tổng lượt xem
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.TrangThai)
+                                Trạng thái
                             </th>
                             <th>Thao tác</th>
                         </tr>
@@ -76,7 +84,7 @@
                                 </td>
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.MaBaiViet }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.MaBaiViet }) |
+                                    <a href="@Url.Action("ChiTiet", "DangBaiViet", new { id = @item.MaBaiViet })">Xem chi tiết </a>|
                                     @Html.ActionLink("Delete", "Delete", new { id = item.MaBaiViet })
                                 </td>
                             </tr>
@@ -86,13 +94,10 @@
 
                 </div>
 
-                <div class="row d-flex">
-                    <div class="col-xl-8 py-5 px-md-5">
-                        <div class="row pt-md-4">
-                            <div class="col-md-12">
-                                
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="block-27">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page , id = ten.TaiKhoanID}))
                         </div>
                     </div>
                 </div>

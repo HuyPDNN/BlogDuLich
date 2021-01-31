@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using PagedList;
 using PagedList.Mvc;
 
-namespace Model.Dao
+namespace Model.AdminModel
 {
     public class TaiKhoanDao
     {

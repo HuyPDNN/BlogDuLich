@@ -193,6 +193,7 @@
   <ItemGroup>
     <Content Include="Anhimages\anh\cuocthianh-hue.jpg" />
     <Content Include="Anh\images\Anh\036726eebb2c05364d92e8af4c8bcc02.png" />
+    <Content Include="Anh\images\Anh\112004_18-1.jpg" />
     <Content Include="Anh\images\Anh\avatar.jpg" />
     <Content Include="Anh\images\Anh\avatar3.jpg" />
     <Content Include="Anh\images\Anh\hoc-nau-bun-bo-hue.jpg" />
@@ -3043,7 +3044,6 @@
     <Content Include="Assets\Login\assetsLoginIndex\vendor\remixicon\remixicon.woff2" />
     <Content Include="Areas\Admin\Views\NhanVien\DanhSachTaiKhoan.cshtml" />
     <Content Include="Areas\Admin\Views\BaiViet\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NhanVien\ThemNhanVien.cshtml" />
     <Content Include="Areas\Admin\Views\DuyetBai\DuyetBai.cshtml" />
     <Content Include="Assets\Plugins\ckfender\config.ascx.bak" />
     <Content Include="Assets\Plugins\ckfender\plugins\fileeditor\codemirror\LICENSE" />
@@ -3052,6 +3052,7 @@
     <Content Include="Assets\Plugins\ckfender\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\Plugins\ckfender\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Assets\Plugins\ckfender\userfiles\.htaccess" />
+    <Content Include="Areas\Admin\Views\NhanVien\ThemNhanVien.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -3094,8 +3095,12 @@
     <Content Include="Views\ChiTietThanhVien\Index.cshtml" />
     <Content Include="Views\DangNhapThanhVien\ThongTinChiTietThanhVien.cshtml" />
     <Content Include="Views\BinhLuanDanhGia\ThemBL.cshtml" />
-    <Content Include="Views\DangNhapThanhVien\DangKiThanhVien.cshtml" />
     <Content Include="Views\ChiTietThanhVien\CapNhatThongTinThanhVien.cshtml" />
+    <Content Include="Views\Home\BaiVietNoiBat.cshtml" />
+    <Content Include="Views\ChiTietBaiViet\DanhGiaBaiViet.cshtml" />
+    <Content Include="Views\ChiTietBaiViet\Save.cshtml" />
+    <Content Include="Views\DangBaiViet\ChiTiet.cshtml" />
+    <Content Include="Views\DangNhapThanhVien\DangKiThanhVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -11,8 +11,9 @@ namespace DuLichBui.Controllers
     {
         // GET: BinhLuanDanhGia
         public BinhLuanDanhGiaDao dao = new BinhLuanDanhGiaDao();
-        public ActionResult Index(long id )
+        public ActionResult Index(int id)
         {
+            ViewBag.ListBL = new BinhLuanDanhGiaDao().ListBL(id);
             return View();
         }
         [HttpGet]
@@ -22,14 +23,14 @@ namespace DuLichBui.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ThemBL(BinhLuanBaiViet bl)
+        public ActionResult ThemBL(BinhLuanBaiViet bl, long id)
         {
             if (ModelState.IsValid)
             {
                 long mabaiviet = dao.Insert(bl);
                 if (mabaiviet > 0)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index" + "/" + bl.MaBaiViet, "ChiTietBaiViet");
                 }
                 else
                 {

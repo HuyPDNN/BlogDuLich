@@ -15,11 +15,17 @@ namespace Model.Dao
         {
             db = new DulichBuiDbContext();
         }
-        public long Insert(BinhLuanBaiViet bl)
+        public long Insert(BinhLuanBaiViet entity)
         {
-            db.BinhLuanBaiViet.Add(bl);
+            var tv = db.ThanhVien.First();
+            var bv = db.BaiViet.First();
+            // var tv = db.ThanhVien.Find(entity.ThanhVien.MaThanhVien);
+            db.BinhLuanBaiViet.Add(entity);
+            entity.MaThanhVien = tv.MaThanhVien;
+            entity.MaBaiViet = bv.MaBaiViet;
+            entity.NgayBinhLuan = DateTime.Now;
             db.SaveChanges();
-            return bl.MaBinhLuan;
+            return entity.MaBinhLuan;
         }
         public List<BinhLuanBaiViet> ListBL(int id)
         {

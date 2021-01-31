@@ -76,31 +76,24 @@ namespace DuLichBui.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DangKiThanhVien(DangKiThanhVienModel model)
+        public ActionResult DangKiThanhVien(ThanhVien model)
         {
+            var db = new DulichBuiDbContext();
             if (ModelState.IsValid)
             {
                 var dao = new DangNhapThanhVienDao();
-                if (dao.CheckTaiKhoan(model.TaiKhoan))
+                if (db.ThanhVien.Any(x => x.TaiKhoan == model.TaiKhoan))
                 {
-                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
+                    ModelState.AddModelError("Thông báo!", "Tên đăng nhập đã tồn tại");
                 }
-                else if (dao.CheckEmail(model.Email))
+                else if (db.ThanhVien.Any(x => x.Email == model.Email))
                 {
-                    ModelState.AddModelError("", "Email đã tồn tại");
+                    ModelState.AddModelError("Thông báo!", "Email đã tồn tại");
                 }
                 else
                 {
-                    var taikhoan = new ThanhVien();
-                    taikhoan.MatKhau = model.MatKhau;
-                    taikhoan.HoTen = model.HoTen;
-                    taikhoan.Email = model.Email;
-                    taikhoan.SDT = model.SDT;
-                    taikhoan.DiaChi = model.DiaChi;
-                    taikhoan.NgayDangKi = DateTime.Now;
-                    taikhoan.TrangThai = true;
 
-                    var result = dao.DangKiThanhVien(taikhoan);
+                    var result = dao.DangKiThanhVien(model);
                     if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
@@ -109,12 +102,12 @@ namespace DuLichBui.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Đăng ký không thành công.");
+                        ModelState.AddModelError("Thông báo!", "Đăng ký không thành công.");
                     }
 
                 }
             }
-            return View(model);
+            return View("DangKiThanhVien");
         }
     }
 }

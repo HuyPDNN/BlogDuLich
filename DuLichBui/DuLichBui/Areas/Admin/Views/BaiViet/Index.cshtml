@@ -1,40 +1,36 @@
-﻿@model IEnumerable<Model.EF.BaiViet>
+﻿@model  PagedList.IPagedList<Model.EF.BaiViet>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Danh Sách bài viết</h2>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MaBaiViet)
+            Mã bài viết
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ThanhVien.HoTen)
+            Tên thành viên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ThanhVien.LoaiThanhVien)
+            Loại thành viên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+            Tên thể loại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TieuDe)
+           Tiêu đề
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgayDang)
+            Ngày đăng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TongLuotXem)
+            Tổng lượt xem
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TrangThai)
+            Trạng thái
         </th>
         <th>Thao tác</th>
     </tr>
@@ -75,4 +71,11 @@
     }
 
 </table>
+<div class="row">
+    <div class="col">
+        <div class="block-27">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</div>
 

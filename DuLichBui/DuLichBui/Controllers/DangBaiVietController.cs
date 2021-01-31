@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Model.Dao;
 using Model.EF;
+using DuLichBui.Common;
 
 namespace DuLichBui.Controllers
 {
@@ -14,10 +15,17 @@ namespace DuLichBui.Controllers
         // GET: ThanhVien
         public BaiVietDao dao = new BaiVietDao();
         public DulichBuiDbContext db = new DulichBuiDbContext();
-        public ActionResult Index(int page = 1, int pagesize = 10)
+        public ActionResult Index(int id,int page = 1, int pagesize = 10)
         {
-            var model = dao.DanhSachBaiViet(page, pagesize);
+            var model = dao.DanhSachBVTV(page, pagesize, id);
             return View(model);
+        }
+
+        public ActionResult ChiTiet(int id)
+        {
+            var baiviet = new BaiVietDao().Chitiet(id);
+            //ViewBag.thanhvien = new ThanhVienDao().chitiet(baiviet.MaThanhVien.Value);
+            return View(baiviet);
         }
         public void SetViewBag(long? selectedID = null)
         {
@@ -30,19 +38,21 @@ namespace DuLichBui.Controllers
 
             List<TheLoai> listtheloai = db.TheLoai.ToList();
             ViewBag.listtheloai = new SelectList(listtheloai, "MaTheLoai", "TenTheLoai");
+            //ViewBag.thanhvien = new ThanhVienDao().chitiet(id);
             return View();
         }
         [HttpPost]
         public ActionResult ThemBaiViet(BaiViet model)
         {
 
-
+            var bv = new TaiKhoanLogin();
             if (ModelState.IsValid)
             {
                 long mabaiviet = dao.Insert(model);
                 if (mabaiviet > 0)
                 {
-                    return RedirectToAction("Index", "Home");
+
+                    return RedirectToAction("Index" + "/" + model.MaThanhVien, "DangBaiViet");
                 }
                 else
                 {

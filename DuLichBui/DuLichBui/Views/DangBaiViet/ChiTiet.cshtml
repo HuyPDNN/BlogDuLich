@@ -1,0 +1,46 @@
+﻿@model Model.EF.BaiViet
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="colorlib-main">
+    <div id="slideshow-page">
+        <div id="slideshow">
+            <div class="slide-wrapper">
+                <div class="slide"><img src="/Assets/Client/images/slider1.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider2.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider3.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider4.jpg"></div>
+                <div class="slide"><img src="/Assets/Client/images/slider5.jpg"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-xl-8 py-5 px-md-5">
+                    <h3 class="sidebar-heading">@Model.TieuDe</h3>
+                    <hr />
+                    <div class="row pt-md-4">
+                        <div class="col-md-12">
+                            <div class="blog-entry ftco-animate d-md-flex">
+                                <div class="text text-2 pl-md-4">
+                                    <p class="meta">
+                                        <span><i class="icon-calendar mr-2"></i>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", @Model.NgayDang))</span>
+                                        <span><a href="#"><i class="icon-folder-o mr-2"></i>@Model.TheLoai.TenTheLoai</a></span>
+                                        <br />
+                                    </p>
+                                    <img src="@Model.Image" style="width: 500px; height: 300px" />
+                                    @Model.NoiDung
+                                </div>
+                                <a href="@Url.Action("", "", new { id = Model.MaBaiViet })">Chỉnh sửa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DuLichBui.Common;
-using Model.Dao;
+using Model.AdminModel;
 
 namespace DuLichBui.Areas.Admin.Controllers
 {
@@ -29,7 +29,7 @@ namespace DuLichBui.Areas.Admin.Controllers
                     taikhoanSession.TaiKhoan = taikhoan.TaiKhoan1;
                     taikhoanSession.TaiKhoanID = taikhoan.MaTaiKhoan;
                     Session.Add(CommonConstants.USER_SESSION, taikhoanSession);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "HomeAdmin");
                 }
                 else if(result==0){
                     ModelState.AddModelError("","Tài khoản không tồn tại");

@@ -59,10 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminModel\DuyetBaiDao.cs" />
+    <Compile Include="AdminModel\LoaiThanhVien.cs" />
     <Compile Include="Dao\BaiVietDao.cs" />
     <Compile Include="Dao\BinhLuanDanhGiaDao.cs" />
     <Compile Include="Dao\DangNhapThanhVienDao.cs" />
-    <Compile Include="Dao\TaiKhoanDao.cs" />
+    <Compile Include="AdminModel\TaiKhoanDao.cs" />
     <Compile Include="Dao\ThanhVienDao.cs" />
     <Compile Include="Dao\TheLoaiDao.cs" />
     <Compile Include="EF\BaiViet.cs" />
