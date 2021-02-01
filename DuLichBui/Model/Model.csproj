@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="AdminModel\DuyetBaiDao.cs" />
     <Compile Include="AdminModel\LoaiThanhVien.cs" />
+    <Compile Include="AdminModel\ThanhVienDao.cs" />
     <Compile Include="Dao\BaiVietDao.cs" />
     <Compile Include="Dao\BinhLuanDanhGiaDao.cs" />
     <Compile Include="Dao\DangNhapThanhVienDao.cs" />

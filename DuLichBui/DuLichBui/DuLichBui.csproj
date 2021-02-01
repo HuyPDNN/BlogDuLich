@@ -192,15 +192,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Anhimages\anh\cuocthianh-hue.jpg" />
-    <Content Include="Anh\images\Anh\036726eebb2c05364d92e8af4c8bcc02.png" />
-    <Content Include="Anh\images\Anh\112004_18-1.jpg" />
     <Content Include="Anh\images\Anh\avatar.jpg" />
-    <Content Include="Anh\images\Anh\avatar3.jpg" />
-    <Content Include="Anh\images\Anh\hoc-nau-bun-bo-hue.jpg" />
-    <Content Include="Anh\images\Anh\hue-kich-cau-du-lich-c.jpg" />
-    <Content Include="Anh\images\Anh\cuocthianh-hue.jpg" />
-    <Content Include="Anh\images\Anh\tfd_200910035403_147221.jpg" />
-    <Content Include="Anh\images\Anh\avatar2.jpg" />
+    <Content Include="Anh\images\Anh\camau.png" />
+    <Content Include="Anh\images\Anh\daklak.jpg" />
+    <Content Include="Anh\images\Anh\dalat.jpg" />
+    <Content Include="Anh\images\Anh\danang.jpg" />
+    <Content Include="Anh\images\Anh\gialai.jpg" />
+    <Content Include="Anh\images\Anh\hagiang.jpg" />
+    <Content Include="Anh\images\Anh\halong.jpeg" />
+    <Content Include="Anh\images\Anh\hanoi.jpg" />
+    <Content Include="Anh\images\Anh\hoian.jpg" />
+    <Content Include="Anh\images\Anh\hue.jpg" />
+    <Content Include="Anh\images\Anh\ninhbinh.jpg" />
+    <Content Include="Anh\images\Anh\quangbinh.jpg" />
+    <Content Include="Anh\images\Anh\saigon.jpg" />
+    <Content Include="Anh\images\Anh\sapa.jpg" />
+    <Content Include="Anh\images\Anh\tv1.jpg" />
+    <Content Include="Anh\images\Anh\tv2.jpg" />
+    <Content Include="Anh\images\Anh\tv3.jpg" />
+    <Content Include="Anh\images\Anh\vungtau.jpg" />
     <Content Include="Anh\_thumbs\Images\Anh\cuocthianh-hue.jpg" />
     <Content Include="Anh_thumbs\Images\anh\cuocthianh-hue.jpg" />
     <Content Include="Assets\Admin\css\sb-admin-2.css" />

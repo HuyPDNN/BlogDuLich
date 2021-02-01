@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -23,13 +23,19 @@ namespace Model.EF
         public int? MaLoaiThanhVien { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage ="Bạn chưa nhập tài khoản")]
         public string TaiKhoan { get; set; }
 
-        [StringLength(50)]
+
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Độ dài mật khẩu ít nhất 6 ký tự.")]
+        [Required(ErrorMessage ="Bạn chưa nhập mật khẩu")]
         public string MatKhau { get; set; }
 
+        [Required(ErrorMessage ="Bạn chưa nhập tên")]
         public string HoTen { get; set; }
 
+        [Required(ErrorMessage ="Bạn chưa nhập Email")]
+        [DataType(DataType.EmailAddress, ErrorMessage ="Địa chỉ email không hợp lệ.")]
         public string Email { get; set; }
 
         [Column(TypeName = "date")]
@@ -41,14 +47,20 @@ namespace Model.EF
         [StringLength(50)]
         public string AnhDaiDien { get; set; }
 
+        
+        [Required(ErrorMessage ="Bạn chưa nhập số điện thoại")]
+        
         public int? SDT { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage ="Bạn chưa nhập số quốc gia")]
         public string QuocGia { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage ="Bạn chưa nhập số thành phố")]
         public string ThanhPho { get; set; }
 
+        [Required(ErrorMessage ="Bạn chưa nhập số địa chỉ")]
         public string DiaChi { get; set; }
 
         public string FaceBookLink { get; set; }
@@ -79,4 +91,5 @@ namespace Model.EF
 
         public virtual LoaiThanhVien LoaiThanhVien { get; set; }
     }
+
 }

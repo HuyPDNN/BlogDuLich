@@ -10,10 +10,11 @@ namespace DuLichBui.Areas.Admin.Controllers
     public class ThanhVienController : Controller
     {
         // GET: Admin/ThanhVien
-        public TaiKhoanDao dao = new TaiKhoanDao();
-        public ActionResult Index()
+        public ThanhVienDao dao = new ThanhVienDao();
+        public ActionResult Index(int page  = 1, int pagesize = 10)
         {
-            return View();
+            var model = dao.DanhSachThanhVien(page, pagesize);
+            return View(model);
         }
       
     }

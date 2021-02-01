@@ -15,7 +15,6 @@ namespace DuLichBui.Controllers
         {
             ViewBag.ListBL = new BinhLuanDanhGiaDao().ListBL(id);
             var baiviet = new BaiVietDao().Chitiet(id);
-            //ViewBag.thanhvien = new ThanhVienDao().chitiet(baiviet.MaThanhVien.Value);
             return View(baiviet);
 
         }

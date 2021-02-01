@@ -23,7 +23,7 @@ namespace DuLichBui.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ThemBL(BinhLuanBaiViet bl, long id)
+        public ActionResult ThemBL(BinhLuanBaiViet bl)
         {
             if (ModelState.IsValid)
             {

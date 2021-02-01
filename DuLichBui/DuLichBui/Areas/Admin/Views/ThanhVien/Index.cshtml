@@ -1,8 +1,119 @@
-﻿
+﻿@model PagedList.IPagedList<Model.EF.ThanhVien>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<title>Thành Viên</title>
-<h2>Thành Viên</h2>
 
+<h2>Danh sách thành viên</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Loại thành viên
+        </th>
+        <th>
+            Tên
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           Ảnh
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+           Quốc gia
+        </th>
+        <th>
+            Thành phố
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Facebook
+        </th>
+        
+        <th>
+            Ngày đăng kí
+        </th>
+        <th>
+            Tổng bài viết
+        </th>
+        <th>
+           Tổng lượt đánh giá
+        </th>
+        <th>
+            Tổng lượt xem
+        </th>
+        <th>
+            Tiền hoa hồng
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th> Thao tác</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiThanhVien.TenLoaiThanhVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnhDaiDien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuocGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhPho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FaceBookLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTaBanThan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDangKi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongBaiViet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongLuotDanhGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongLuotXem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TienHoaHong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaThanhVien }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaThanhVien }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaThanhVien })
+        </td>
+    </tr>
+}
+
+</table>

@@ -49,6 +49,7 @@
                 @{
                     var ten = (DuLichBui.Common.TaiKhoanLogin)Session[DuLichBui.Common.CommonConstants.USER_SESSION];
                 }
+                <h4>Nội dung bình luận</h4>
                 @foreach (var item in binhluan)
             {
                     @*<h3 class="mb-5 font-weight-bold">6 Comments</h3>*@
@@ -66,6 +67,7 @@
                                 }
                             </div>
                             <div class="comment-body">
+                               
                                 <h3>@item.ThanhVien.HoTen</h3>
                                 <div class="meta">@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.NgayBinhLuan))</div>
                                 <p>@item.NoiDungBinhLuan</p>

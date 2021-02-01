@@ -34,6 +34,12 @@ namespace Model.Dao
         public long DangKiThanhVien(ThanhVien entity)
         {
             db.ThanhVien.Add(entity);
+            entity.NgayDangKi = DateTime.Now;
+            entity.TongBaiViet = 0;
+            entity.TongLuotDanhGia = 0;
+            entity.TongLuotXem = 0;
+            entity.TienHoaHong = 0;
+            entity.MaLoaiThanhVien = 1;
             db.SaveChanges();
             return entity.MaThanhVien;
         }

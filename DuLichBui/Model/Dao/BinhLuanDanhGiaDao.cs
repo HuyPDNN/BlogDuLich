@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Model.Dao
 {
@@ -30,7 +32,7 @@ namespace Model.Dao
         public List<BinhLuanBaiViet> ListBL(int id)
         {
             var baiviet = db.BaiViet.Find(id);
-            return db.BinhLuanBaiViet.Where(x => x.MaBaiViet == baiviet.MaBaiViet).ToList();
+            return db.BinhLuanBaiViet.Where(x => x.MaBaiViet == baiviet.MaBaiViet).OrderByDescending(o => o.NgayBinhLuan).ToList();
         }
     }
 }

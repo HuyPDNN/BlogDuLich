@@ -18,10 +18,9 @@ namespace Model.Dao
         }
         public long Insert(BaiViet entity)
         {
-            //var ma = id.MaThanhVien.GetType();
-            //var tv = db.ThanhVien.Find(id.MaThanhVien);
+
+            //var tv = db.ThanhVien.Find(entity.ThanhVien.MaThanhVien);
             var tv = db.ThanhVien.First();
-           // var tv = db.ThanhVien.Find(entity.ThanhVien.MaThanhVien);
             db.BaiViet.Add(entity);
             entity.MaThanhVien = tv.MaThanhVien;
             entity.NgayDang = DateTime.Now;
