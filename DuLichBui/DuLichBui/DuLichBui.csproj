@@ -210,6 +210,10 @@
     <Content Include="Anh\images\Anh\tv1.jpg" />
     <Content Include="Anh\images\Anh\tv2.jpg" />
     <Content Include="Anh\images\Anh\tv3.jpg" />
+    <Content Include="Anh\images\Anh\tv4.jpg" />
+    <Content Include="Anh\images\Anh\tv5.jpg" />
+    <Content Include="Anh\images\Anh\tv6.jpg" />
+    <Content Include="Anh\images\Anh\tv7.jpg" />
     <Content Include="Anh\images\Anh\vungtau.jpg" />
     <Content Include="Anh\_thumbs\Images\Anh\cuocthianh-hue.jpg" />
     <Content Include="Anh_thumbs\Images\anh\cuocthianh-hue.jpg" />
