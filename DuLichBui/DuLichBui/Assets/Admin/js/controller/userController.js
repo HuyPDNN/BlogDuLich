@@ -14,11 +14,12 @@
                 type: "POST",
                 success: function (response) {
                     console.log(response);
-                    if (response.status == true) {
-                        btn.text('Hủy đăng');
+                    if (response.status == false) {
+                        btn.text('Duyệt bài');
+                        
                     }
                     else {
-                        btn.text('Duyệt bài');
+                        btn.text('Hủy đăng');
                     }
                 }
             });

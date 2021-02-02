@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            <a href="#" class="btn-active" data-id="@Model.MaBaiViet">@(Model.TrangThai ? "Hủy đăng" : "Duyệt bài")</a>
+            <a href="#" class="btn-active" data-id="@Model.MaBaiViet">@Html.Raw(Model.TrangThai ? "Hủy đăng" : "<strong>Duyệt bài</strong>")    </a>
             @*@Html.LabelFor(model => model.TrangThai, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="dropdown">

@@ -26,7 +26,7 @@ namespace Model.AdminModel
             var baiviet = db.BaiViet.Find(id);
             baiviet.TrangThai = !baiviet.TrangThai;
             db.SaveChanges();
-            return !baiviet.TrangThai;
+            return baiviet.TrangThai;
         }
         public IEnumerable<BaiViet> DanhSachBaiViet(int page, int pagesize)
         {

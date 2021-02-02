@@ -83,9 +83,9 @@
                                     <a href="#" class="btn-active" data-id="@item.MaBaiViet">@(item.TrangThai ? "Đã xuất bản" : "Chờ duyệt")</a>
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.MaBaiViet }) |
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaBaiViet }) |
                                     <a href="@Url.Action("ChiTiet", "DangBaiViet", new { id = @item.MaBaiViet })">Xem chi tiết </a>|
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.MaBaiViet })
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaBaiViet })
                                 </td>
                             </tr>
                         }
